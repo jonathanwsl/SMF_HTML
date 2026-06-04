@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMF CCL — Applied AI for Manufacturing | Gen2 Spline Map</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0f0e0c;
+  --paper: #f5f2ec;
+  --rule: #d6d1c4;
+  --teal-dark: #085041;
+  --teal-mid: #0F6E56;
+  --teal-light: #E1F5EE;
+  --amber-dark: #633806;
+  --amber-mid: #BA7517;
+  --amber-light: #FAEEDA;
+  --coral-dark: #993C1D;
+  --coral-mid: #D85A30;
+  --coral-light: #FAECE7;
+  --blue-dark: #0C447C;
+  --blue-mid: #185FA5;
+  --blue-light: #E6F1FB;
+  --purple-dark: #3C3489;
+  --purple-mid: #534AB7;
+  --purple-light: #EEEDFE;
+  --gray-dark: #444441;
+  --gray-mid: #888780;
+  --gray-light: #F1EFE8;
+  --fn1: var(--teal-dark);
+  --fn1-light: var(--teal-light);
+  --fn2: var(--blue-dark);
+  --fn2-light: var(--blue-light);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+/* ── LAYOUT ── */
+.page { max-width: 1100px; margin: 0 auto; padding: 48px 32px 80px; }
+
+/* ── HEADER ── */
+.header {
+  border-top: 3px solid var(--ink);
+  padding-top: 24px;
+  margin-bottom: 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 24px;
+}
+.header-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  margin-bottom: 8px;
+}
+.header-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 42px;
+  line-height: 1.05;
+  font-weight: 400;
+  color: var(--ink);
+}
+.header-title em { font-style: italic; color: var(--teal-mid); }
+.header-meta {
+  text-align: right;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gray-mid);
+  line-height: 1.8;
+}
+.header-badge {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* ── SECTION LABELS ── */
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-mid);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 20px;
+}
+
+/* ── ADOPTION BASELINE ── */
+.baseline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-bottom: 12px;
+}
+.stat-cell {
+  background: var(--paper);
+  padding: 20px 24px;
+}
+.stat-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--ink);
+}
+.stat-number.accent { color: var(--teal-mid); }
+.stat-number.warn { color: var(--coral-mid); }
+.stat-label {
+  font-size: 12px;
+  color: var(--gray-dark);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+.stat-source {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--gray-mid);
+  margin-top: 8px;
+}
+.stat-source a { color: var(--gray-mid); text-decoration: none; border-bottom: 1px solid var(--rule); }
+
+/* ── COMPARISON BAR ── */
+.sector-compare { margin-bottom: 12px; }
+.compare-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 60px;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.compare-label { font-size: 12px; font-weight: 500; }
+.compare-bar-track {
+  height: 10px;
+  background: var(--gray-light);
+  border-radius: 0;
+  overflow: hidden;
+}
+.compare-bar-fill {
+  height: 100%;
+  transition: width 0.6s ease;
+}
+.compare-pct { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--gray-dark); text-align: right; }
+.compare-note { font-size: 11px; color: var(--gray-mid); margin-top: 4px; }
+
+/* ── WORKFLOW ── */
+.workflow-strip {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+}
+.workflow-step {
+  flex: 1;
+  padding: 14px 16px;
+  border-right: 1px solid var(--rule);
+  position: relative;
+}
+.workflow-step:last-child { border-right: none; }
+.workflow-step.active-fn1 { background: var(--teal-light); border-top: 3px solid var(--teal-dark); }
+.workflow-step.active-fn2 { background: var(--blue-light); border-top: 3px solid var(--blue-dark); }
+.workflow-step.inactive { background: var(--gray-light); border-top: 3px solid var(--rule); opacity: 0.6; }
+.step-code { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
+.step-name { font-weight: 600; font-size: 12px; }
+.step-tag {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  padding: 2px 6px;
+  margin-top: 6px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.tag-fn1 { background: var(--teal-dark); color: #fff; }
+.tag-fn2 { background: var(--blue-dark); color: #fff; }
+
+/* ── SPLINE ENGINE ── */
+.spline-bar {
+  display: grid;
+  grid-template-columns: 3fr 3fr 1fr 4fr 3fr;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+.spline-stage {
+  padding: 10px 12px;
+  font-size: 11px;
+}
+.spline-s1 { background: #E1F5EE; border-top: 3px solid var(--teal-dark); }
+.spline-s2 { background: #E6F1FB; border-top: 3px solid var(--blue-dark); }
+.spline-gate { background: var(--gray-light); border-top: 3px solid var(--gray-mid); }
+.spline-s3 { background: var(--amber-light); border-top: 3px solid var(--amber-mid); }
+.spline-s4 { background: var(--purple-light); border-top: 3px solid var(--purple-mid); }
+.stage-num { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 0.1em; opacity: 0.7; }
+.stage-title { font-weight: 600; margin-top: 2px; font-size: 11px; }
+.stage-time { font-family: 'DM Mono', monospace; font-size: 9px; color: var(--gray-mid); margin-top: 4px; }
+
+/* ── FUNCTION BLOCKS ── */
+.functions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.fn-block { border: 1px solid var(--rule); }
+.fn-header { padding: 14px 18px; }
+.fn1-header { background: var(--teal-dark); color: white; }
+.fn2-header { background: var(--blue-dark); color: white; }
+.fn-code { font-family: 'DM Mono', monospace; font-size: 9px; opacity: 0.75; letter-spacing: 0.1em; text-transform: uppercase; }
+.fn-name { font-family: 'DM Serif Display', serif; font-size: 20px; margin-top: 2px; }
+.fn-body { padding: 16px 18px; }
+.fn-modules { list-style: none; }
+.fn-modules li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.fn-modules li:last-child { border-bottom: none; }
+.mod-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  padding: 2px 5px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.fn1-num { background: var(--teal-light); color: var(--teal-dark); }
+.fn2-num { background: var(--blue-light); color: var(--blue-dark); }
+.mod-cap {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  padding: 1px 5px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.cap-ds { background: var(--teal-light); color: var(--teal-dark); }
+.cap-sa { background: var(--amber-light); color: var(--amber-dark); }
+.cap-au { background: var(--purple-light); color: var(--purple-dark); }
+
+/* ── CLASSIFIER TASKS ── */
+.classifiers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.classifier-block { border: 1px solid var(--rule); padding: 18px; }
+.classifier-fn-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 2px 8px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.fn1-tag { background: var(--teal-dark); color: white; }
+.fn2-tag { background: var(--blue-dark); color: white; }
+.classifier-title { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+.classifier-sub { font-size: 11px; color: var(--gray-mid); margin-bottom: 12px; }
+.task-list { list-style: none; }
+.task-list li {
+  display: flex;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.task-list li:last-child { border-bottom: none; }
+.task-n {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--gray-mid);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.coverage-check {
+  margin-top: 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--teal-dark);
+  background: var(--teal-light);
+  padding: 5px 8px;
+}
+
+/* ── 9 MODULE GRID ── */
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  margin-bottom: 32px;
+}
+.module-card { background: var(--paper); padding: 16px; }
+.module-card:hover { background: var(--gray-light); }
+.module-fn-stripe {
+  height: 3px;
+  margin-bottom: 10px;
+}
+.fn1-stripe { background: var(--teal-dark); }
+.fn2-stripe { background: var(--blue-dark); }
+.module-id {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--gray-mid);
+  margin-bottom: 4px;
+}
+.module-title { font-weight: 600; font-size: 12px; line-height: 1.35; margin-bottom: 8px; }
+.module-meta { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }
+.module-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  padding: 2px 5px;
+  letter-spacing: 0.05em;
+}
+.module-doc { font-size: 11px; color: var(--gray-dark); line-height: 1.4; }
+.module-doc-label { font-family: 'DM Mono', monospace; font-size: 8px; color: var(--gray-mid); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 2px; }
+.module-judgment { font-size: 10px; color: var(--gray-mid); margin-top: 6px; font-style: italic; line-height: 1.4; }
+
+/* ── DILEMMAS ── */
+.dilemmas { margin-bottom: 32px; }
+.dilemma-card {
+  border: 1px solid var(--rule);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.dilemma-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+.dilemma-header:hover { background: var(--gray-light); }
+.dilemma-d {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  color: var(--rule);
+  line-height: 1;
+}
+.dilemma-meta {}
+.dilemma-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--gray-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 2px;
+}
+.dilemma-name { font-weight: 600; font-size: 15px; }
+.dilemma-tagline { font-size: 12px; color: var(--gray-dark); margin-top: 2px; }
+.dilemma-toggle {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  color: var(--gray-mid);
+  transition: transform 0.3s;
+}
+.dilemma-toggle.open { transform: rotate(45deg); }
+.dilemma-body {
+  display: none;
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--rule);
+}
+.dilemma-body.open { display: block; }
+.scr-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 16px; }
+.scr-block { padding: 14px; border: 1px solid var(--rule); }
+.scr-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid;
+}
+.scr-s .scr-label { border-color: var(--gray-mid); color: var(--gray-mid); }
+.scr-c .scr-label { border-color: var(--coral-mid); color: var(--coral-dark); }
+.scr-r .scr-label { border-color: var(--teal-mid); color: var(--teal-dark); }
+.scr-text { font-size: 12px; line-height: 1.55; }
+.scr-data {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  background: var(--gray-light);
+  padding: 6px 8px;
+  margin-top: 8px;
+  border-left: 2px solid var(--gray-mid);
+  line-height: 1.6;
+}
+.scr-data a { color: var(--gray-dark); font-size: 9px; text-decoration: none; border-bottom: 1px solid var(--rule); }
+
+/* ── STAGE 3 STRESS ── */
+.stress-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+.stress-card { border: 1px solid var(--rule); padding: 18px; }
+.stress-pass {
+  display: inline-block;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  background: var(--teal-dark);
+  color: white;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+  letter-spacing: 0.08em;
+}
+.stress-module { font-weight: 600; font-size: 13px; margin-bottom: 10px; }
+.stress-row { display: flex; gap: 8px; margin-bottom: 6px; font-size: 12px; }
+.stress-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--gray-mid);
+  text-transform: uppercase;
+  flex-shrink: 0;
+  padding-top: 1px;
+  width: 72px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--gray-mid);
+  line-height: 1.8;
+}
+.footer-sources a { color: var(--gray-mid); text-decoration: none; border-bottom: 1px dotted var(--rule); }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid var(--rule); margin: 32px 0; }
+
+/* ── PRINT ── */
+@media print {
+  body { background: white; }
+  .page { padding: 24px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <div class="header-eyebrow">SMF Centre for Corporate Learning — Gen2 Sector Spline Map</div>
+    <h1 class="header-title">Applied AI for<br><em>Manufacturing</em></h1>
+  </div>
+  <div class="header-meta">
+    <div class="header-badge">Gen2 Architecture</div><br>
+    Version: Function-Level Stage 1<br>
+    Sector: Manufacturing (Singapore SME)<br>
+    Functions: Plan · Make<br>
+    Modules: 9 (5+4)<br>
+    Architecture: Spline + Sibling<br>
+    Generated: June 2026
+  </div>
+</div>
+
+<!-- SECTION 1: ADOPTION BASELINE -->
+<div class="section-label">01 — Adoption Baseline (Singapore Manufacturing SMEs)</div>
+
+<div class="baseline-grid">
+  <div class="stat-cell">
+    <div class="stat-number warn">57%</div>
+    <div class="stat-label">of Singapore manufacturing SMEs report using AI — <strong>lowest</strong> among all priority sectors surveyed</div>
+    <div class="stat-source">Source: <a href="https://www.crnasia.com/news/2026/artificial-intelligence/singapore-smes-use-ai" target="_blank">AWS/Strand Partners, CRN Asia, 2026</a></div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-number warn">23%</div>
+    <div class="stat-label">of those AI adopters have reached <strong>advanced use</strong> (combining multiple models or building own systems)</div>
+    <div class="stat-source">Source: <a href="https://www.crnasia.com/news/2026/artificial-intelligence/singapore-smes-use-ai" target="_blank">AWS/Strand Partners, CRN Asia, 2026</a></div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-number warn">37%</div>
+    <div class="stat-label">cite <strong>integration with existing workflows</strong> as main AI deployment delay — higher than financial services or healthcare</div>
+    <div class="stat-source">Source: <a href="https://www.crnasia.com/news/2026/artificial-intelligence/singapore-smes-use-ai" target="_blank">AWS/Strand Partners, CRN Asia, 2026</a></div>
+  </div>
+</div>
+
+<!-- Sector comparison -->
+<div class="sector-compare">
+  <div class="compare-row">
+    <div class="compare-label">Financial Services</div>
+    <div class="compare-bar-track"><div class="compare-bar-fill" style="width:75%;background:var(--blue-mid);"></div></div>
+    <div class="compare-pct">75%</div>
+  </div>
+  <div class="compare-row">
+    <div class="compare-label">Healthcare</div>
+    <div class="compare-bar-track"><div class="compare-bar-fill" style="width:61%;background:var(--blue-mid);opacity:0.75;"></div></div>
+    <div class="compare-pct">61%</div>
+  </div>
+  <div class="compare-row">
+    <div class="compare-label" style="color:var(--coral-dark);font-weight:600;">Manufacturing ←</div>
+    <div class="compare-bar-track"><div class="compare-bar-fill" style="width:57%;background:var(--coral-mid);"></div></div>
+    <div class="compare-pct" style="color:var(--coral-dark);">57%</div>
+  </div>
+  <div class="compare-note">AI adoption rate among Singapore SMEs by sector — AWS/Strand Partners, CRN Asia 2026</div>
+</div>
+
+<!-- National context stat -->
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-bottom:32px;">
+  <div class="stat-cell" style="padding:14px 20px;">
+    <div style="font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-mid);margin-bottom:4px;">National SME AI adoption (all sectors)</div>
+    <div style="font-size:13px;"><span style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--teal-mid);">14.5%</span> in 2024 &nbsp;·&nbsp; up from <strong>4.2%</strong> in 2023 — tripled in one year</div>
+    <div class="stat-source" style="margin-top:6px;">Source: <a href="https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy" target="_blank">IMDA Singapore Digital Economy Report, 2025</a></div>
+  </div>
+  <div class="stat-cell" style="padding:14px 20px;">
+    <div style="font-family:'DM Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-mid);margin-bottom:4px;">Manufacturing's rank (non-I&C sectors)</div>
+    <div style="font-size:13px;"><span style="font-family:'DM Serif Display',serif;font-size:28px;color:var(--ink);">3rd</span> — behind Finance &amp; Insurance and Wholesale Trade. Growth is real; gap is structural.</div>
+    <div class="stat-source" style="margin-top:6px;">Source: <a href="https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy" target="_blank">IMDA Singapore Digital Economy Report, 2025</a></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 2: THREE DILEMMAS -->
+<div class="section-label">02 — Three Strategic Dilemmas in Manufacturing AI Adoption</div>
+<div class="dilemmas">
+
+  <!-- Dilemma 1 -->
+  <div class="dilemma-card">
+    <div class="dilemma-header" onclick="toggleDilemma(this)">
+      <div class="dilemma-d">01</div>
+      <div class="dilemma-meta">
+        <div class="dilemma-num">Dilemma 1 of 3</div>
+        <div class="dilemma-name">The Data Readiness Paradox</div>
+        <div class="dilemma-tagline">You need AI to know which data to fix. You need the data to run the AI.</div>
+      </div>
+      <div class="dilemma-toggle">+</div>
+    </div>
+    <div class="dilemma-body">
+      <div class="scr-grid">
+        <div class="scr-block scr-s">
+          <div class="scr-label">Situation</div>
+          <div class="scr-text">Every AI vendor and training programme says the same thing: AI output quality is proportional to data quality. The logical first step is to clean the data before deploying AI.</div>
+        </div>
+        <div class="scr-block scr-c">
+          <div class="scr-label">Complication</div>
+          <div class="scr-text">The only way to know which data is worth cleaning is to know which use case you are solving for. And the only way to select a use case with confidence is to understand what your data can actually support. SMEs who wait for "perfect data" never start. SMEs who start without structure waste effort cleaning the wrong things.</div>
+          <div class="scr-data">AI systems for predictive maintenance, quality control, or demand forecasting require complementary investments in data infrastructure, staff training, and workflow redesign — without those, even advanced technologies underdeliver.<br><span style="font-size:8px;opacity:0.7;">MIT Sloan Management Review, Jan 2026</span></div>
+        </div>
+        <div class="scr-block scr-r">
+          <div class="scr-label">Resolution</div>
+          <div class="scr-text">The exit from this loop is <strong>use-case specificity first</strong>. Identify one decision you make weekly that depends on information you already capture imperfectly. Design the AI experiment around that decision. The act of running it reveals exactly which data gaps matter — and only those gaps are worth fixing. Data quality is a consequence of use-case clarity, not a prerequisite for it. This is why the Spline's Stage 2 Decision Gate exists.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dilemma 2 -->
+  <div class="dilemma-card">
+    <div class="dilemma-header" onclick="toggleDilemma(this)">
+      <div class="dilemma-d">02</div>
+      <div class="dilemma-meta">
+        <div class="dilemma-num">Dilemma 2 of 3</div>
+        <div class="dilemma-name">The Productivity Dip Trap</div>
+        <div class="dilemma-tagline">The dip happens when leadership is watching most closely. Pulling back before inflection means absorbing the cost without the return.</div>
+      </div>
+      <div class="dilemma-toggle">+</div>
+    </div>
+    <div class="dilemma-body">
+      <div class="scr-grid">
+        <div class="scr-block scr-s">
+          <div class="scr-label">Situation</div>
+          <div class="scr-text">The business case for AI is documented. Leadership approves a pilot. The team is trained. The tool is deployed.</div>
+          <div class="scr-data">Early AI adopters in manufacturing have reduced logistics costs by 15%, improved inventory levels by 35%, and enhanced service levels by 65%.<br><span style="font-size:8px;opacity:0.7;">Georgetown GJIA, Feb 2024 — cited in articlesedge.com</span></div>
+        </div>
+        <div class="scr-block scr-c">
+          <div class="scr-label">Complication</div>
+          <div class="scr-text">AI adoption initially causes a measurable productivity dip before recovery — a J-curve. The negative impact is most pronounced among established firms with long-standing routines, layered hierarchies, and legacy systems. The dip happens at exactly the moment leadership is watching most closely — right after the pilot investment.</div>
+          <div class="scr-data">MIT Sloan: "Older firms struggle to maintain vital production management practices such as monitoring KPIs and production targets during the AI transition period."<br><span style="font-size:8px;opacity:0.7;">MIT Sloan Management Review, Jan 2026</span></div>
+        </div>
+        <div class="scr-block scr-r">
+          <div class="scr-label">Resolution</div>
+          <div class="scr-text">The dip is predictable and therefore manageable — if named in advance. Select a first use case with a short feedback loop (weeks, not quarters) so the J-curve is shallow. Separate "process disruption" metrics from "outcome" metrics during the pilot. The EWTP experimentation pathway provides funded runway: the dip happens on grant time, not commercial time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dilemma 3 -->
+  <div class="dilemma-card">
+    <div class="dilemma-header" onclick="toggleDilemma(this)">
+      <div class="dilemma-d">03</div>
+      <div class="dilemma-meta">
+        <div class="dilemma-num">Dilemma 3 of 3</div>
+        <div class="dilemma-name">The Skills Sequence Contradiction</div>
+        <div class="dilemma-tagline">You can't build AI judgment in the abstract. But most training programmes are designed to avoid the dependency on real data.</div>
+      </div>
+      <div class="dilemma-toggle">+</div>
+    </div>
+    <div class="dilemma-body">
+      <div class="scr-grid">
+        <div class="scr-block scr-s">
+          <div class="scr-label">Situation</div>
+          <div class="scr-text">The AI skills gap is the biggest stated barrier to integration. The logical response: train the workforce before deploying AI tools.</div>
+          <div class="scr-data">Education — not role or workflow redesign — is the #1 way companies are adjusting talent strategies in response to AI. 78% of manufacturers actively investing in AI upskilling programmes.<br><span style="font-size:8px;opacity:0.7;">Deloitte State of AI in the Enterprise, 2026 · Empowering Pumps &amp; Equipment, 2026</span></div>
+        </div>
+        <div class="scr-block scr-c">
+          <div class="scr-label">Complication</div>
+          <div class="scr-text">Workforce readiness is built through actual use of AI in real work contexts — not classroom instruction alone. The skill that matters in manufacturing is domain-specific AI judgment: knowing when to trust the output, when to override it, and what workplace document to bring to the tool. That judgment cannot be taught in the abstract. But most SME training programmes are designed precisely to avoid the dependency on real data — because contextualised content is expensive to develop.</div>
+          <div class="scr-data">The pace of AI integration is shaped more by workforce readiness than technology constraints. Only 10% cite employee resistance as a barrier — the bottleneck is structured exposure, not attitude.<br><span style="font-size:8px;opacity:0.7;">Empowering Pumps &amp; Equipment, May 2026</span></div>
+        </div>
+        <div class="scr-block scr-r">
+          <div class="scr-label">Resolution</div>
+          <div class="scr-text">The only pedagogy that breaks this loop is <strong>immediate replicability with the learner's own data</strong> — which is the Spline's Stage 3 design principle. The learner brings one real workplace document and runs the experiment in the room, on their own Claude account. The sequence is not train-then-deploy. It is deploy-in-a-structured-learning-context. The skill transfer is the act of doing it once with something real. The human judgment checkpoint ensures it produces a transferable mental model — not just a one-time result.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 3: SCOR WORKFLOW -->
+<div class="section-label">03 — SCOR Workflow & Function Selection</div>
+<div class="workflow-strip" style="margin-bottom:8px;">
+  <div class="workflow-step active-fn1">
+    <div class="step-code" style="color:var(--teal-mid);">Fn 1</div>
+    <div class="step-name">Plan</div>
+    <div class="step-tag tag-fn1">5 Modules</div>
+  </div>
+  <div class="workflow-step inactive">
+    <div class="step-code">—</div>
+    <div class="step-name">Source</div>
+    <div class="step-tag" style="background:var(--gray-light);color:var(--gray-mid);">Phase 2</div>
+  </div>
+  <div class="workflow-step active-fn2">
+    <div class="step-code" style="color:var(--blue-mid);">Fn 2</div>
+    <div class="step-name">Make</div>
+    <div class="step-tag tag-fn2">4 Modules</div>
+  </div>
+  <div class="workflow-step inactive">
+    <div class="step-code">—</div>
+    <div class="step-name">Deliver</div>
+    <div class="step-tag" style="background:var(--gray-light);color:var(--gray-mid);">Phase 2</div>
+  </div>
+  <div class="workflow-step inactive">
+    <div class="step-code">—</div>
+    <div class="step-name">Return</div>
+    <div class="step-tag" style="background:var(--gray-light);color:var(--gray-mid);">Phase 2</div>
+  </div>
+</div>
+<div style="font-size:11px;color:var(--gray-mid);margin-bottom:32px;">Function selection rationale: Plan and Make are the highest-ROI, most document-executable functions for non-technical manufacturing professionals. Source, Deliver, Return reserved for Phase 2 catalog expansion.</div>
+
+<hr class="divider">
+
+<!-- SECTION 4: SPLINE ENGINE -->
+<div class="section-label">04 — The Spline Engine (fixed for all 9 modules)</div>
+<div class="spline-bar">
+  <div class="spline-stage spline-s1">
+    <div class="stage-num">Stage 1</div>
+    <div class="stage-title">My AI Baseline</div>
+    <div class="stage-time">90 min · 09:00–10:30</div>
+  </div>
+  <div class="spline-stage spline-s2">
+    <div class="stage-num">Stage 2</div>
+    <div class="stage-title">Identify the Right AI Opportunity</div>
+    <div class="stage-time">90 min · 10:45–12:15</div>
+  </div>
+  <div class="spline-stage spline-gate">
+    <div class="stage-num">Gate</div>
+    <div class="stage-title">Decision Gate</div>
+    <div class="stage-time">30 min · 13:00–13:30</div>
+  </div>
+  <div class="spline-stage spline-s3">
+    <div class="stage-num">Stage 3</div>
+    <div class="stage-title">Building the AI-Powered Workflow</div>
+    <div class="stage-time">105 min · 13:30–15:15</div>
+  </div>
+  <div class="spline-stage spline-s4">
+    <div class="stage-num">Stage 4</div>
+    <div class="stage-title">From Individual to Transformation</div>
+    <div class="stage-time">90 min · 15:30–17:00</div>
+  </div>
+</div>
+<div style="font-size:11px;color:var(--gray-mid);margin-bottom:32px;font-family:'DM Mono',monospace;">Gen2: Stage 1 classifier tasks are function-level (shared across all siblings). Stage 3 is module-specific. Each module independently assessed.</div>
+
+<hr class="divider">
+
+<!-- SECTION 5: FUNCTION BLOCKS + MODULES -->
+<div class="section-label">05 — Two Functions · Nine Modules</div>
+<div class="functions-grid">
+  <div class="fn-block">
+    <div class="fn-header fn1-header">
+      <div class="fn-code">Function 1 · Plan · SCOR</div>
+      <div class="fn-name">Production Planning &amp;<br>Supply Chain</div>
+    </div>
+    <div class="fn-body">
+      <ul class="fn-modules">
+        <li><span class="mod-num fn1-num">M1</span><span>AI-Augmented Demand Forecasting &amp; S&amp;OP Preparation</span><span class="mod-cap cap-ds">Decision Support</span></li>
+        <li><span class="mod-num fn1-num">M2</span><span>AI-Augmented Supplier Risk Scoring &amp; Procurement Briefing</span><span class="mod-cap cap-ds">Decision Support</span></li>
+        <li><span class="mod-num fn1-num">M3</span><span>AI-Augmented Inventory Optimisation &amp; Reorder Decision</span><span class="mod-cap cap-ds">Decision Support</span></li>
+        <li><span class="mod-num fn1-num">M4</span><span>AI-Augmented Production Capacity Planning</span><span class="mod-cap cap-sa">Skills Aug.</span></li>
+        <li><span class="mod-num fn1-num">M5</span><span>AI-Augmented Supply Chain Disruption Response</span><span class="mod-cap cap-sa">Skills Aug.</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fn-block">
+    <div class="fn-header fn2-header">
+      <div class="fn-code">Function 2 · Make · SCOR</div>
+      <div class="fn-name">Production Operations<br>&amp; Quality</div>
+    </div>
+    <div class="fn-body">
+      <ul class="fn-modules">
+        <li><span class="mod-num fn2-num">M6</span><span>AI-Augmented Production Scheduling &amp; Sequencing</span><span class="mod-cap cap-ds">Decision Support</span></li>
+        <li><span class="mod-num fn2-num">M7</span><span>AI-Augmented SOP Review &amp; Work Instruction Drafting</span><span class="mod-cap cap-sa">Skills Aug.</span></li>
+        <li><span class="mod-num fn2-num">M8</span><span>AI-Augmented Defect Classification &amp; Root Cause Analysis</span><span class="mod-cap cap-ds">Decision Support</span></li>
+        <li><span class="mod-num fn2-num">M9</span><span>AI-Augmented Maintenance Decision &amp; Downtime Risk Briefing</span><span class="mod-cap cap-sa">Skills Aug.</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 6: CLASSIFIER TASKS -->
+<div class="section-label">06 — Gen2 Function Classifier Tasks (Stage 1 — shared across siblings)</div>
+<div class="classifiers-grid">
+  <div class="classifier-block">
+    <div><span class="classifier-fn-tag fn1-tag">Function 1 — Plan</span></div>
+    <div class="classifier-title">6 Shared Stage 1 Tasks</div>
+    <div class="classifier-sub">Identical in Stage 1 of M1–M5. Facilitator uses once per function — not per module.</div>
+    <ul class="task-list">
+      <li><span class="task-n">T1</span>Deciding how to adjust a production plan when a key supplier signals a 6-week lead time extension with no firm delivery date</li>
+      <li><span class="task-n">T2</span>Choosing which SKUs to prioritise for safety stock build-up when working capital is limited and demand signals are mixed</li>
+      <li><span class="task-n">T3</span>Determining whether a demand spike in the past three months represents a new trend or a one-off event when historical data is limited</li>
+      <li><span class="task-n">T4</span>Deciding when to place a purchase order for a critical raw material when the price is rising but the demand forecast is uncertain</li>
+      <li><span class="task-n">T5</span>Assessing whether a production shortfall should be communicated to a customer now or absorbed internally while a recovery plan is developed</li>
+      <li><span class="task-n">T6</span>Evaluating which supplier in a dual-source arrangement should receive a larger allocation when one has better price and the other has better reliability</li>
+    </ul>
+    <div class="coverage-check">✓ COVERAGE PASSED — M1(T3,T5) · M2(T1,T6) · M3(T2,T4) · M4(T1,T5) · M5(T1,T5,T6)</div>
+  </div>
+  <div class="classifier-block">
+    <div><span class="classifier-fn-tag fn2-tag">Function 2 — Make</span></div>
+    <div class="classifier-title">6 Shared Stage 1 Tasks</div>
+    <div class="classifier-sub">Identical in Stage 1 of M6–M9. Facilitator uses once per function — not per module.</div>
+    <ul class="task-list">
+      <li><span class="task-n">T1</span>Deciding whether to hold a production line for an unscheduled maintenance check when output targets are at risk and the failure mode is ambiguous</li>
+      <li><span class="task-n">T2</span>Determining how to sequence a production run when two urgent jobs share the same machine and both customers are claiming priority</li>
+      <li><span class="task-n">T3</span>Assessing whether a recurring quality defect is a process problem or a material problem when both the machine and the supplier changed recently</li>
+      <li><span class="task-n">T4</span>Deciding when a work instruction should be updated to reflect an operator workaround that has become standard practice</li>
+      <li><span class="task-n">T5</span>Evaluating whether a production team should override an AI-generated schedule recommendation when the system cannot account for a known operator constraint</li>
+      <li><span class="task-n">T6</span>Choosing which maintenance task to defer when a planned shutdown window is shorter than the full maintenance backlog</li>
+    </ul>
+    <div class="coverage-check" style="background:var(--blue-light);color:var(--blue-dark);">✓ COVERAGE PASSED — M6(T2,T5) · M7(T4,T5) · M8(T3,T4) · M9(T1,T6)</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 7: 9 MODULE GRID -->
+<div class="section-label">07 — Nine Module Cards (Stage 3 Stress-Tested)</div>
+<div class="modules-grid">
+  <!-- M1 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn1-stripe"></div>
+    <div class="module-id">M1 · Plan · Decision Support</div>
+    <div class="module-title">AI-Augmented Demand Forecasting &amp; S&amp;OP Preparation</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">12-month rolling sales history (Excel/CSV)</div>
+    <div class="module-judgment">Human checkpoint: Are the patterns AI surfaces real signals or data artefacts? Verify one AI-identified trend against operational knowledge before accepting.</div>
+  </div>
+  <!-- M2 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn1-stripe"></div>
+    <div class="module-id">M2 · Plan · Decision Support</div>
+    <div class="module-title">AI-Augmented Supplier Risk Scoring &amp; Procurement Briefing</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Supplier performance record or vendor scorecard (Excel/PDF)</div>
+    <div class="module-judgment">Human checkpoint: Does AI risk ranking match buyer's relationship knowledge? Override where it doesn't — and document why.</div>
+  </div>
+  <!-- M3 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn1-stripe"></div>
+    <div class="module-id">M3 · Plan · Decision Support</div>
+    <div class="module-title">AI-Augmented Inventory Optimisation &amp; Reorder Decision</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Inventory movement report or stock position file (Excel)</div>
+    <div class="module-judgment">Human checkpoint: Can the AI reorder recommendation survive a real demand spike? Stress-test one SKU against the planner's intuition.</div>
+  </div>
+  <!-- M4 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn1-stripe"></div>
+    <div class="module-id">M4 · Plan · Skills Augmentation</div>
+    <div class="module-title">AI-Augmented Production Capacity Planning</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Production schedule or capacity utilisation report (Excel)</div>
+    <div class="module-judgment">Human checkpoint: Does the AI-drafted capacity brief capture constraints the system cannot see — shift patterns, machine age, operator skill?</div>
+  </div>
+  <!-- M5 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn1-stripe"></div>
+    <div class="module-id">M5 · Plan · Skills Augmentation</div>
+    <div class="module-title">AI-Augmented Supply Chain Disruption Response</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Disruption incident log or supply chain risk register (Word/Excel)</div>
+    <div class="module-judgment">Human checkpoint: Is the AI response plan commercially realistic? Learner must validate feasibility against their actual supplier relationships.</div>
+  </div>
+  <!-- M6 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn2-stripe"></div>
+    <div class="module-id">M6 · Make · Decision Support</div>
+    <div class="module-title">AI-Augmented Production Scheduling &amp; Sequencing</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Jobs list or production order backlog (Excel/CSV)</div>
+    <div class="module-judgment">Human checkpoint: Does the AI sequence survive contact with floor reality — operator availability, machine quirks, customer priority overrides?</div>
+  </div>
+  <!-- M7 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn2-stripe"></div>
+    <div class="module-id">M7 · Make · Skills Augmentation</div>
+    <div class="module-title">AI-Augmented SOP Review &amp; Work Instruction Drafting</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Existing SOP or work instruction document (Word/PDF)</div>
+    <div class="module-judgment">Human checkpoint: Would the AI-revised SOP be signed off by the process engineer? Identify one change that requires expert judgment, not just better language.</div>
+  </div>
+  <!-- M8 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn2-stripe"></div>
+    <div class="module-id">M8 · Make · Decision Support</div>
+    <div class="module-title">AI-Augmented Defect Classification &amp; Root Cause Analysis</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Quality inspection log or non-conformance report (Excel/Word)</div>
+    <div class="module-judgment">Human checkpoint: Does the AI root cause hypothesis match what the quality engineer already suspects? Where it diverges — which is more trustworthy, and why?</div>
+  </div>
+  <!-- M9 -->
+  <div class="module-card">
+    <div class="module-fn-stripe fn2-stripe"></div>
+    <div class="module-id">M9 · Make · Skills Augmentation ★ Primary</div>
+    <div class="module-title">AI-Augmented Maintenance Decision &amp; Downtime Risk Briefing</div>
+    <div class="module-doc-label">Stage 3 document</div>
+    <div class="module-doc">Maintenance log or equipment service record (Word/PDF)</div>
+    <div class="module-judgment">Human checkpoint: Does AI risk ranking align with the engineer's intuition? Where it diverges — which source is more trustworthy, and why?</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- SECTION 8: STAGE 3 STRESS TEST -->
+<div class="section-label">08 — Stage 3 Stress Test (Primary Module per Function)</div>
+<div class="stress-grid">
+  <div class="stress-card">
+    <div class="stress-pass">✓ STRESS PASS · Function 1 Primary</div>
+    <div class="stress-module">M1 — AI-Augmented Demand Forecasting &amp; S&amp;OP Preparation</div>
+    <div class="stress-row"><div class="stress-key">Document</div><div>12-month rolling sales history export (Excel or CSV)</div></div>
+    <div class="stress-row"><div class="stress-key">Capability</div><div>Decision Support</div></div>
+    <div class="stress-row"><div class="stress-key">Experiment</div><div>Learner uploads own demand data to Claude · prompts identification of seasonal patterns and anomalies · drafts 3-bullet S&amp;OP assumption brief for next quarter</div></div>
+    <div class="stress-row"><div class="stress-key">Judgment</div><div>Are the patterns Claude surfaces real business signals or data artefacts?</div></div>
+    <div class="stress-row"><div class="stress-key">Feasibility</div><div>One document · one capability · no domain instruction · executable in 60 min on standard Claude account · no API keys · no installation</div></div>
+  </div>
+  <div class="stress-card">
+    <div class="stress-pass">✓ STRESS PASS · Function 2 Primary</div>
+    <div class="stress-module">M9 — AI-Augmented Maintenance Decision &amp; Downtime Risk Briefing</div>
+    <div class="stress-row"><div class="stress-key">Document</div><div>Maintenance log or equipment service record (Word or PDF)</div></div>
+    <div class="stress-row"><div class="stress-key">Capability</div><div>Skills Augmentation (Co-Pilot)</div></div>
+    <div class="stress-row"><div class="stress-key">Experiment</div><div>Learner uploads own maintenance log to Claude · prompts identification of failure patterns and asset risk ranking · drafts one-page maintenance priority brief</div></div>
+    <div class="stress-row"><div class="stress-key">Judgment</div><div>Does the AI's risk ranking align with the engineer's intuition? Where it diverges — which is more trustworthy, and why?</div></div>
+    <div class="stress-row"><div class="stress-key">Feasibility</div><div>One document · one capability · facilitator needs no engineering expertise · executable in 60 min · no IT infrastructure</div></div>
+  </div>
+</div>
+
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>
+    <div style="font-weight:600;margin-bottom:8px;font-size:10px;color:var(--ink);">Sources — All data cited in this document</div>
+    <div class="footer-sources">
+      <a href="https://www.crnasia.com/news/2026/artificial-intelligence/singapore-smes-use-ai" target="_blank">AWS/Strand Partners "Unlocking Singapore's AI Potential" — CRN Asia, 2026</a><br>
+      <a href="https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2025/singapore-digital-economy" target="_blank">IMDA Singapore Digital Economy Report, 2025</a><br>
+      <a href="https://mitsloan.mit.edu/ideas-made-to-matter/productivity-paradox-ai-adoption-manufacturing-firms" target="_blank">MIT Sloan — The Productivity Paradox of AI Adoption in Manufacturing, Jan 2026</a><br>
+      <a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html" target="_blank">Deloitte — State of AI in the Enterprise, 2026</a><br>
+      <a href="https://empoweringpumps.com/the-ai-gap-in-manufacturing-is-widening-which-side-are-you-on/" target="_blank">Empowering Pumps &amp; Equipment — The AI Gap in Manufacturing, May 2026</a><br>
+      Georgetown GJIA — AI Supply Chain Early Adopter ROI Data, Feb 2024 (cited)
+    </div>
+  </div>
+  <div>
+    <div style="font-weight:600;margin-bottom:8px;font-size:10px;color:var(--ink);">Architecture</div>
+    Gen2 Sector Spline Map Prompt — Function-Level Architecture Edition<br>
+    The Spline is the engine. The function is the Stage 1 context.<br>
+    The module is the Stage 3 experiment.<br>
+    Each module independently assessed (WSQ-compatible).<br>
+    Classifier tasks are a function asset — not a module asset.<br><br>
+    SMF Centre for Corporate Learning<br>
+    Applied AI Catalog — Manufacturing Track
+  </div>
+</div>
+
+</div><!-- end .page -->
+
+<script>
+function toggleDilemma(header) {
+  const body = header.nextElementSibling;
+  const toggle = header.querySelector('.dilemma-toggle');
+  const isOpen = body.classList.contains('open');
+  document.querySelectorAll('.dilemma-body').forEach(b => b.classList.remove('open'));
+  document.querySelectorAll('.dilemma-toggle').forEach(t => { t.classList.remove('open'); t.textContent = '+'; });
+  if (!isOpen) {
+    body.classList.add('open');
+    toggle.classList.add('open');
+    toggle.textContent = '×';
+  }
+}
+</script>
+</body>
+</html>
