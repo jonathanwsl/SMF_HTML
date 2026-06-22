@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gen2 Sector Spline Map v2.5 — B2B Sales & Account Management</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1A1A1A;
+  --rule: #d0d0d0;
+  --teal-dark: #CC2222; --teal-mid: #CC2222; --teal-light: #FBEAEA;
+  --amber-dark: #555555; --amber-mid: #555555; --amber-light: #E8E8E8;
+  --coral-dark: #1A1A1A; --coral-mid: #1A1A1A; --coral-light: #E8E8E8;
+  --blue-dark: #991A1A; --blue-mid: #991A1A; --blue-light: #F5E2E2;
+  --gray-dark: #555555; --gray-mid: #888888; --gray-light: #E8E8E8;
+}
+body { font-family: 'Source Sans 3', sans-serif; color: var(--ink); max-width: 900px; margin: 0 auto; padding: 32px; line-height: 1.5; }
+h1 { font-family: 'Montserrat', sans-serif; font-weight: 700; }
+.section-label, .module-id, .meta, .friction-tag, .narrative-block-header, .narrative-tag, .narrative-empty { font-family: 'Montserrat', sans-serif; }
+h1 { font-size: 26px; margin-bottom: 8px; color: #1A1A1A; }
+h1 .accent { color: #CC2222; }
+.header-box { background: #E8E8E8; border-left: 4px solid #CC2222; padding: 20px 24px; margin-bottom: 28px; }
+.header-rule { height: 3px; background: #CC2222; border: none; margin: 16px 0 28px; }
+.eyebrow { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #555555; margin-bottom: 6px; }
+.meta { color: var(--gray-mid); font-size: 12px; margin-bottom: 24px; }
+.divider { border: none; border-top: 1px solid var(--rule); margin: 28px 0; }
+.section-label { font-family: monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-dark); margin-bottom: 12px; font-weight: bold; }
+.guardrail-box { background: var(--gray-light); border: 1px solid var(--rule); padding: 14px 18px; margin-bottom: 12px; font-size: 13px; }
+.friction-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.friction-card { border: 1px solid var(--rule); padding: 10px 14px; font-size: 12px; }
+.friction-card.became { border-left: 4px solid var(--teal-mid); }
+.friction-card.shared { border-left: 4px solid var(--amber-dark); }
+.friction-card.cut { border-left: 4px solid var(--coral-dark); opacity: 0.75; }
+.friction-tag { font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: bold; }
+.tag-became { color: var(--teal-dark); }
+.tag-shared { color: var(--amber-dark); }
+.tag-cut { color: var(--coral-dark); }
+table.rank { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
+table.rank th, table.rank td { border: 1px solid var(--rule); padding: 8px 10px; text-align: left; }
+table.rank th { background: var(--gray-light); }
+.function-block { border: 1px solid var(--rule); padding: 16px 20px; margin-bottom: 18px; }
+.function-name { font-size: 15px; font-weight: bold; margin-bottom: 6px; }
+.task-list { list-style: none; padding: 0; font-size: 13px; }
+.task-list li { padding: 6px 0; border-bottom: 1px solid var(--rule); }
+.task-anchor { color: var(--teal-dark); font-weight: bold; }
+.task-shared { color: var(--amber-dark); font-weight: bold; }
+.module-card { border: 1px solid var(--rule); padding: 14px 18px; margin-bottom: 14px; }
+.module-id { font-family: monospace; font-size: 11px; color: var(--gray-mid); margin-bottom: 4px; }
+.module-title { font-weight: bold; font-size: 14px; margin-bottom: 8px; }
+.module-field-label { font-weight: bold; font-size: 11px; text-transform: uppercase; color: var(--gray-dark); margin-top: 8px; }
+.module-field { font-size: 13px; margin-top: 2px; }
+.narrative-block { border: 1px solid var(--rule); margin-bottom: 14px; }
+.narrative-block-header { background: var(--gray-light); padding: 8px 14px; font-family: monospace; font-size: 11px; display: flex; justify-content: space-between; }
+.narrative-tag { font-size: 9px; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; }
+.tag-intel { background: var(--amber-light); color: var(--amber-dark); }
+.tag-analysis { background: var(--blue-light); color: var(--blue-dark); }
+.tag-purpose { background: var(--amber-light); color: var(--amber-dark); }
+.narrative-content { padding: 12px 16px; font-size: 13px; }
+.narrative-empty { font-family: monospace; font-size: 11px; color: var(--gray-mid); font-style: italic; }
+.recon-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.recon-card { border: 1px solid var(--rule); padding: 10px 14px; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<div class="header-box">
+<div class="eyebrow">SMF Centre for Corporate Learning — Gen2 Sector Spline Map</div>
+<h1>Applied AI for <span class="accent">B2B Sales</span> &amp; Account Management</h1>
+<div class="meta" style="margin-bottom:0;">Gen2 Sector Spline Map · Version 2.5 — Aligned Numbering Edition · Generated June 2026 · Sector: B2B Sales — General (Cross-Industry) · Geography: Singapore</div>
+</div>
+
+<hr class="divider">
+
+<div class="section-label">01 — Spline Engine (Fixed)</div>
+<div class="guardrail-box">
+STAGE 1: My AI Baseline (90 min) → STAGE 2: Identify the Right AI Opportunity (90 min) → STAGE 2b: Decision Gate (30 min) → STAGE 3: Building the AI-Powered Workflow (105 min) → STAGE 4: From Individual to Transformation (90 min). Total: 480 min · 7 hours.
+</div>
+
+<hr class="divider">
+
+<div class="section-label">02 — Candidate Functions (Step 2 — Domain Knowledge, No Market Data Yet)</div>
+<div class="guardrail-box">
+Four candidate functions identified from general B2B sales workflow knowledge: (1) Prospecting &amp; Lead Generation, (2) Account Development &amp; Pipeline Management, (3) Proposal &amp; Deal Closing, (4) Post-Sale Account Management &amp; Renewal. Selection among these happens at Step 5, using Market Intel — not at this step.
+</div>
+
+<hr class="divider">
+
+<div class="section-label">02a — Workflow Friction Map (Step 4 — Evidence Base)</div>
+<div class="friction-grid">
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M1</span><br>Determining which of several accounts to pursue first when all have similar deal size but different buying signals, timelines, and relationship depth.</div>
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M2</span><br>Evaluating whether a pipeline that looks healthy by deal count is genuinely healthy — or at risk — when average deal age is steadily increasing.</div>
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M3</span><br>Assessing whether a competitor win in a key vertical signals a segment trend worth exiting or a single recoverable relationship worth re-engaging.</div>
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M4</span><br>Choosing how to respond when a warm prospect goes cold after a positive first call, with no explanation and no response to follow-up.</div>
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M5</span><br>Deciding whether a prospect who opened three emails in a week but never replied represents genuine intent or engagement noise.</div>
+
+  <div class="friction-card shared"><span class="friction-tag tag-shared">Shared debate only</span><br>Deciding how much weight to give a referral from an existing client when the referred prospect sits outside your usual ICP.</div>
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M6</span><br>Deciding how much to customise a proposal when the client's stated requirements closely match your standard package — and when customisation adds value versus risk.</div>
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M7</span><br>Assessing whether an AI-drafted executive summary accurately reflects the client's priorities as captured in your discovery notes — or has smoothed out the nuance.</div>
+
+  <div class="friction-card became"><span class="friction-tag tag-became">→ Became M8</span><br>Determining which objections raised in a discovery call to pre-empt in the written proposal versus hold back for the live presentation.</div>
+
+  <div class="friction-card shared"><span class="friction-tag tag-shared">Shared debate only</span><br>Deciding whether to send a follow-up two days after submitting a proposal or wait for the client to initiate.</div>
+
+  <div class="friction-card shared"><span class="friction-tag tag-shared">Shared debate only</span><br>Evaluating whether a client's positive but non-committal response to a presented deck signals genuine interest, internal process delay, or polite deflection.</div>
+
+  <div class="friction-card shared"><span class="friction-tag tag-shared">Shared debate only</span><br>Choosing how to respond to a pricing push-back when your discount authority is limited.</div>
+
+  <div class="friction-card cut"><span class="friction-tag tag-cut">Not built — function not selected</span><br>Moving a recently won deal forward when client onboarding has stalled.</div>
+
+  <div class="friction-card cut"><span class="friction-tag tag-cut">Not built — function not selected</span><br>Protecting a renewal when the internal champion has left and the replacement contact has no relationship with the solution.</div>
+
+</div>
+
+<hr class="divider">
+
+<div class="section-label">05 — Function Selection Rationale (Step 5 — Market Intel Applied)</div>
+<table class="rank">
+<tr><th>Candidate Function</th><th>Market Intel Evidence</th><th>Signal</th><th>Result</th></tr>
+<tr><td>Prospecting &amp; Lead Generation</td><td>"Lead Generation" HIGH</td><td>Strong</td><td rowspan="2" style="vertical-align:middle;">Merged → <strong>SELECTED</strong> as Function 1</td></tr>
+<tr><td>Account Development &amp; Pipeline Management</td><td>"Pipeline" MED, "Sales Productivity" HIGH</td><td>Strong</td></tr>
+<tr><td>Proposal &amp; Deal Closing</td><td>"Proposal Writing" MED</td><td>Moderate</td><td><strong>SELECTED</strong> as Function 2</td></tr>
+<tr><td>Post-Sale Account Management &amp; Renewal</td><td>No keyword in supplied Market Intel (no onboarding/renewal/retention/upsell signal)</td><td>None</td><td><strong>NOT SELECTED</strong> — needs fresh research to reconsider</td></tr>
+</table>
+
+<hr class="divider">
+
+<div class="section-label">06 — Functions &amp; Classifier Tasks (Step 5c — Anchor Tasks, Aligned Numbering)</div>
+
+<div class="function-block">
+<div class="function-name">Function 1 — Account Development &amp; Pipeline Intelligence (5 modules, M1–M5)</div>
+<ul class="task-list">
+<li><span class="task-anchor">T1 (anchors M1)</span> — Determining which of several accounts to pursue first when deal size is similar but buying signals, timelines, and relationship depth differ.</li>
+<li><span class="task-anchor">T2 (anchors M2)</span> — Evaluating whether a pipeline that looks healthy by deal count is genuinely healthy — or at risk — when average deal age is steadily increasing.</li>
+<li><span class="task-anchor">T3 (anchors M3)</span> — Assessing whether a competitor win in a key vertical signals a segment trend worth exiting or a single recoverable relationship worth re-engaging.</li>
+<li><span class="task-anchor">T4 (anchors M4)</span> — Choosing how to respond when a warm prospect goes cold after a positive first call, with no explanation and no response to follow-up.</li>
+<li><span class="task-anchor">T5 (anchors M5)</span> — Deciding whether a prospect who opened three emails in a week but never replied represents genuine intent or engagement noise.</li>
+<li><span class="task-shared">T6 (shared debate only)</span> — Deciding how much weight to give a referral from an existing client when the referred prospect sits outside your usual ICP.</li>
+</ul>
+<div style="font-size:12px;color:var(--gray-mid);margin-top:6px;">Coverage: M1(T1) · M2(T2) · M3(T3) · M4(T4) · M5(T5) — T6 available for Stage 1 debate breadth across all five.</div>
+</div>
+
+<div class="function-block">
+<div class="function-name">Function 2 — Proposal Excellence (3 modules, M6–M8 — M9 cut)</div>
+<ul class="task-list">
+<li><span class="task-anchor">T1 (anchors M6)</span> — Deciding how much to customise a proposal when the client's stated requirements closely match your standard package — and when customisation adds value versus risk.</li>
+<li><span class="task-anchor">T2 (anchors M7)</span> — Assessing whether an AI-drafted executive summary accurately reflects the client's priorities as captured in your discovery notes — or has smoothed out the nuance.</li>
+<li><span class="task-anchor">T3 (anchors M8)</span> — Determining which objections raised in a discovery call to pre-empt in the written proposal versus hold back for the live presentation.</li>
+<li><span class="task-shared">T4 (shared debate only)</span> — Deciding whether to send a follow-up two days after submitting a proposal or wait for the client to initiate.</li>
+<li><span class="task-shared">T5 (shared debate only)</span> — Evaluating whether a client's positive but non-committal response to a presented deck signals genuine interest, internal process delay, or polite deflection.</li>
+<li><span class="task-shared">T6 (shared debate only)</span> — Choosing how to respond to a pricing push-back when your discount authority is limited, the competing offer is unknown, and the relationship is still early.</li>
+</ul>
+<div style="font-size:12px;color:var(--gray-mid);margin-top:6px;">Coverage: M6(T1) · M7(T2) · M8(T3) — T4–T6 available for Stage 1 debate breadth.</div>
+</div>
+
+<hr class="divider">
+
+<div class="section-label">07 — Module Cards (Step 7 — Real Content, Unchanged from Original Map)</div>
+
+<div class="module-card">
+<div class="module-id">M1 · Account Development · Decision Support ★ Primary Fn1</div>
+<div class="module-title">AI-Augmented Account Prioritisation &amp; Prospect Research</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">Four accounts in your pipeline look similar on paper — same deal size, different buying signals, timelines, and relationship depth. Today's focus: using generative AI to score your account list against your own ICP criteria so lead generation effort goes to the right accounts.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">Target account list (Excel/CSV — company names, industry, size, contact names, existing notes)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Does Claude's account tier ranking match your commercial intuition about buyer readiness? Where it diverges — which signal is Claude missing that you carry in your head?</div>
+</div>
+
+<div class="module-card">
+<div class="module-id">M2 · Account Development · Decision Support</div>
+<div class="module-title">AI-Augmented Pipeline Health &amp; Lead Prioritisation Review</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">Your pipeline looks healthy by deal count — but average deal age is rising and momentum is harder to read. Today's focus: using generative AI to surface which leads are stalling, which are progressing, and which need a qualification decision before they age out.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">Inbound lead form responses or marketing-qualified lead list (Excel/CSV export)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Are the disqualification flags Claude surfaces genuine deal-breakers — or edge cases your sales experience would override with more context?</div>
+</div>
+
+<div class="module-card">
+<div class="module-id">M3 · Account Development · Decision Support</div>
+<div class="module-title">AI-Augmented Competitive Intelligence &amp; Battle Card Drafting</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">A competitor just won a deal in your key vertical — is this a pattern or an isolated loss? Today's focus: using generative AI to research the competitive landscape, surface win/loss signals, and draft a battle card.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">Competitor website printout, RFP with competitor mentions, or loss debrief notes (PDF/Word)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Is the battle card's win-theme specific enough to use in a live sales conversation — or has it abstracted away the nuance that only experience provides?</div>
+</div>
+
+<div class="module-card">
+<div class="module-id">M4 · Account Development · Skills Aug.</div>
+<div class="module-title">AI-Augmented Account Research &amp; Re-Engagement Briefing</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">A warm prospect went cold after a positive first call — no reply, no reason, no signal. Today's focus: using generative AI to research the account, surface what may have changed, and draft a re-engagement brief.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">Annual report, LinkedIn company page printout, or recent news articles on target account (PDF/Word)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Does the briefing capture the strategic pressure the buyer's leadership is actually under — or only what's publicly stated and safely generic?</div>
+</div>
+
+<div class="module-card">
+<div class="module-id">M5 · Account Development · Skills Aug.</div>
+<div class="module-title">AI-Augmented Pipeline Narrative &amp; Outreach Sequencing</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">A prospect has engaged but never replied — and your pipeline is full of accounts in the same limbo. Today's focus: using generative AI to draft a sequenced outreach plan that turns ambiguous engagement signals into a structured next-step narrative.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">Deal list with status, value, activity notes, and next steps (Excel/Word — no CRM integration required)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Is the AI pipeline narrative telling the story leadership wants to hear — or the story the data actually supports? Where do they diverge?</div>
+</div>
+
+<div class="module-card">
+<div class="module-id">M6 · Proposal Excellence · Skills Aug.</div>
+<div class="module-title">AI-Augmented Proposal &amp; RFP Response Drafting</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">An RFP lands with a 48-hour turnaround — not enough time to write well, too important to ignore. Today's focus: using generative AI to draft a structured proposal response that covers the brief, positions your solution, and gets to a reviewable first draft before the deadline.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">RFP document or client brief (Word/PDF)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Would a senior bid manager sign off this draft? Identify one section where AI has over-generalised and the human version must be more specific.</div>
+</div>
+
+<div class="module-card">
+<div class="module-id">M7 · Proposal Excellence · Skills Aug.</div>
+<div class="module-title">AI-Augmented Executive Summary &amp; Value Proposition Writing</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">Your executive sponsor just changed mid-deal — the new stakeholder doesn't know your solution and the proposal you sent no longer lands the same way. Today's focus: using generative AI to rewrite the executive summary and value proposition for a different audience.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">Discovery call notes or previous meeting summary (Word/PDF)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Does the executive summary reflect this client's actual priorities — or the priorities any company in that industry would generically have?</div>
+</div>
+
+<div class="module-card">
+<div class="module-id">M8 · Proposal Excellence · Decision Support</div>
+<div class="module-title">AI-Augmented Meeting Preparation &amp; Discovery Call Brief</div>
+<div class="module-field-label">Module Description</div>
+<div class="module-field">A proposal has been silent for two weeks and the next conversation needs to move it forward or close it out. Today's focus: using generative AI to prepare a discovery call brief that surfaces what's really stalling the deal.</div>
+<div class="module-field-label">Stage 3 Document</div>
+<div class="module-field">Last meeting notes and company background email thread (Word/PDF)</div>
+<div class="module-field-label">Human Checkpoint</div>
+<div class="module-field">Has the AI call brief identified the one question whose answer would change your entire approach — or is it producing standard discovery questions any rep would ask?</div>
+</div>
+
+<hr class="divider">
+
+<div class="section-label">09 — Narrative Fields (Purpose + Description — Both Pending Downstream Prompts)</div>
+
+<div class="narrative-block">
+  <div class="narrative-block-header">Market Intel — Reference <span class="narrative-tag tag-intel">Verbatim Source Record</span></div>
+  <div class="narrative-content">Singapore B2B AI demand analysis (GEO Report v3 + Category Library) — full record held verbatim, supplied at trigger. Key signals: Lead Generation HIGH, Pipeline MED, Sales Productivity HIGH, Proposal Writing MED, AI Agent HIGH, Agentic AI MED, SkillsFuture MED (secondary signal only).</div>
+</div>
+
+<div class="narrative-block">
+  <div class="narrative-block-header">Tone Selection <span class="narrative-tag tag-analysis">Pre-filled</span></div>
+  <div class="narrative-content">Selected Tone: C — Professional deliverable-anchored (Spline Map register, default). Governs Description content only, applied later by Tone Brand Guide v1.0.</div>
+</div>
+
+<div class="narrative-block">
+  <div class="narrative-block-header">Assessment Unit <span class="narrative-tag tag-analysis">Pre-filled</span></div>
+  <div class="narrative-content">Assessed at: <strong>Function level</strong> — Account Development &amp; Pipeline Intelligence (M1–M5) and Proposal Excellence (M6–M8) each assessed as one unit across their sibling modules.<br><span class="narrative-empty">Note: open question flagged separately — reconcile against actual current SSG submission practice (module-level vs function-level registration) before final compliance sign-off.</span></div>
+</div>
+
+<div class="narrative-block">
+  <div class="narrative-block-header">Programme Purpose, Function Purposes, Task Purposes <span class="narrative-tag tag-purpose">Awaiting Purpose Layer Prompt v1.1</span></div>
+  <div class="narrative-content"><span class="narrative-empty">⏳ Not generated by this prompt. Requires Tone Brand Guide v1.0 to run first and confirm Description content.</span></div>
+</div>
+
+<div class="narrative-block">
+  <div class="narrative-block-header">Programme Description, Function Narratives, Module Descriptions <span class="narrative-tag tag-analysis">Awaiting Tone Brand Guide v1.0</span></div>
+  <div class="narrative-content"><span class="narrative-empty">⏳ Not generated by this prompt. Run Tone Brand Guide v1.0 against this HTML + Market Intel to populate.</span></div>
+</div>
+
+<div class="narrative-block">
+  <div class="narrative-block-header">Reconciliation Gate Status (Step 9) <span class="narrative-tag tag-purpose">Cannot run yet</span></div>
+  <div class="narrative-content"><span class="narrative-empty">⏳ Step 9 requires both Description (Tone Brand Guide v1.0) and Purpose (Purpose Layer Prompt v1.1) to be populated first — neither has run yet. Once both complete, Step 9 checks coverage tag, content, Description, Purpose, and function scope for all 8 modules.</span></div>
+</div>
+
+</body>
+</html>

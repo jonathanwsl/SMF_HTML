@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Applied AI for B2B Sales &amp; Account Management — Module Card Grid</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root { --red:#CC2222; --red-deep:#991A1A; --near-black:#1A1A1A; --grey:#555555; --light-grey:#E8E8E8; --white:#FFFFFF; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--light-grey); padding: 48px 32px; font-family: 'Source Sans 3', sans-serif; }
+
+.catalogue-eyebrow { font: 600 9px/1 'Montserrat'; letter-spacing:.14em; text-transform:uppercase; color:var(--grey); margin-bottom:8px; }
+.catalogue-title { font: 700 22px/1.2 'Montserrat'; color:var(--near-black); margin-bottom:12px; }
+.catalogue-title span { color:var(--red); }
+.red-rule { height:3px; background:var(--red); margin-bottom:24px; }
+
+.function-group { background:var(--white); border-radius:4px; border:1px solid #d0d0d0; padding:20px; margin-bottom:24px; }
+.function-label { font:700 9px/1 'Montserrat'; text-transform:uppercase; letter-spacing:.12em; color:var(--red); margin-bottom:8px; }
+.series-note { background:var(--light-grey); border-radius:3px; padding:12px 16px; font-size:13px; color:var(--grey); line-height:1.55; margin-bottom:20px; }
+
+.card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+.card { background:var(--white); border-radius:4px; box-shadow:0 2px 10px rgba(0,0,0,.10); overflow:hidden; display:flex; flex-direction:column; }
+
+.card-header { background:var(--red); padding:18px 20px 16px; position:relative; overflow:hidden; }
+.card-header .eyebrow { font:600 9px/1 'Montserrat'; text-transform:uppercase; letter-spacing:.12em; color:rgba(255,255,255,.8); margin-bottom:7px; }
+.card-header .title { font:700 16px/1.3 'Montserrat'; color:var(--white); margin-bottom:10px; position:relative; z-index:1; }
+.card-header .meta { font-size:11px; color:rgba(255,255,255,.75); }
+.watermark { position:absolute; bottom:-12px; right:8px; font:700 64px/1 'Montserrat'; color:rgba(0,0,0,.10); }
+
+.tagline-zone { background:var(--light-grey); border-left:4px solid var(--red); padding:12px 20px; }
+.tagline-zone p { font:italic 600 13px/1.45 'Source Sans 3'; color:var(--near-black); }
+
+.card-body { background:var(--white); padding:16px 20px 0; flex:1; }
+.hook { font-size:13px; color:var(--grey); line-height:1.65; font-weight:500; margin-bottom:14px; }
+.bullets-label { font:700 8px/1 'Montserrat'; text-transform:uppercase; letter-spacing:.12em; color:var(--red); margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid var(--light-grey); }
+.bullet-row { display:flex; gap:10px; margin-bottom:10px; }
+.bullet-dot { width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px; }
+.bullet-label { font:600 12px 'Source Sans 3'; color:var(--near-black); }
+.bullet-text { font-size:12px; color:var(--near-black); line-height:1.55; }
+
+.capability-section { background:var(--light-grey); border-top:1px solid #d0d0d0; padding:12px 20px; margin-top:14px; }
+.capability-label { font:700 8px/1 'Montserrat'; text-transform:uppercase; letter-spacing:.12em; color:var(--grey); margin-bottom:8px; }
+.cap-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:5px; }
+.tag { font:600 9px/1 'Montserrat'; padding:7px 6px; border-radius:3px; text-align:center; background:var(--white); color:var(--grey); border:1px solid #d0d0d0; }
+
+.card-footer { background:var(--near-black); padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+.footer-left { font:500 8px/1 'Montserrat'; text-transform:uppercase; letter-spacing:.06em; color:var(--grey); }
+.footer-right { font:700 9px/1 'Montserrat'; letter-spacing:.1em; color:var(--red); }
+</style>
+</head>
+<body>
+
+<div class="catalogue-eyebrow">SMF CENTRE FOR CORPORATE LEARNING — APPLIED AI LIBRARIES SERIES</div>
+<div class="catalogue-title">Applied AI for <span>B2B Sales</span> &amp; Account Management</div>
+<div class="red-rule"></div>
+
+<!-- ===================== FUNCTION 1 ===================== -->
+<div class="function-group">
+  <div class="function-label">FUNCTION 1 — ACCOUNT DEVELOPMENT &amp; PIPELINE INTELLIGENCE</div>
+  <div class="series-note">Each module targets one professional task in the Account Development &amp; Pipeline Intelligence function and produces a named AI-assisted deliverable. Each module is a complete 1-day programme, assessed as part of the Account Development &amp; Pipeline Intelligence function.</div>
+
+  <div class="card-grid">
+
+    <!-- M1 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">ACCOUNT DEVELOPMENT &amp; PIPELINE INTELLIGENCE · 1 OF 5</div>
+        <div class="title">AI-Augmented Account Prioritisation &amp; Prospect Research</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M1</div>
+      </div>
+      <div class="tagline-zone"><p>Similar deals. Different signals. One account first.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of deciding which accounts to pursue first when deal size is similar but buying signals, timelines, and relationship depth differ.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Account scoring</span> <span class="bullet-text">— AI produces a tiered ranking of your target account list, scored against your own ICP criteria, from the account list you bring to class. Human checkpoint: does the ranking match the commercial intuition about buyer readiness you'd apply yourself — and where does it diverge?</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Account Development &amp; Pipeline Intelligence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M1 of 8</div></div>
+    </div>
+
+    <!-- M2 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">ACCOUNT DEVELOPMENT &amp; PIPELINE INTELLIGENCE · 2 OF 5</div>
+        <div class="title">AI-Augmented Pipeline Health &amp; Lead Prioritisation Review</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M2</div>
+      </div>
+      <div class="tagline-zone"><p>Deal count says healthy. Deal age says otherwise. Catch it early.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of evaluating whether a pipeline that looks healthy by deal count is genuinely healthy or at risk as average deal age increases.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Lead prioritisation</span> <span class="bullet-text">— AI produces a flagged ranking of your lead list, surfacing which leads are stalling, progressing, or ready for a qualification decision, from the lead list you bring to class. Human checkpoint: are the disqualification flags genuine deal-breakers — or edge cases your sales experience would override with more context?</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Account Development &amp; Pipeline Intelligence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M2 of 8</div></div>
+    </div>
+
+    <!-- M3 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">ACCOUNT DEVELOPMENT &amp; PIPELINE INTELLIGENCE · 3 OF 5</div>
+        <div class="title">AI-Augmented Competitive Intelligence &amp; Battle Card Drafting</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M3</div>
+      </div>
+      <div class="tagline-zone"><p>One loss. Real signal. Walk in with the answer.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of assessing whether a competitor win in a key vertical signals a segment trend or a single recoverable relationship.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Battle card drafting</span> <span class="bullet-text">— AI produces a competitive battle card with win/loss signals from the competitor materials or loss notes you bring to class. Human checkpoint: is the win-theme specific enough to use in a live conversation — or has it abstracted away the nuance only experience provides?</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Account Development &amp; Pipeline Intelligence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M3 of 8</div></div>
+    </div>
+
+    <!-- M4 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">ACCOUNT DEVELOPMENT &amp; PIPELINE INTELLIGENCE · 4 OF 5</div>
+        <div class="title">AI-Augmented Account Research &amp; Re-Engagement Briefing</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M4</div>
+      </div>
+      <div class="tagline-zone"><p>Warm goes cold. Find out why. Re-open the door.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of choosing how to respond when a warm prospect goes cold after a positive first call, with no explanation and no follow-up response.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Re-engagement briefing</span> <span class="bullet-text">— AI produces a re-engagement brief surfacing what may have changed, from the account research you bring to class. Human checkpoint: does the briefing capture the strategic pressure the buyer's leadership is actually under — or only what's publicly stated and safely generic?</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Account Development &amp; Pipeline Intelligence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M4 of 8</div></div>
+    </div>
+
+    <!-- M5 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">ACCOUNT DEVELOPMENT &amp; PIPELINE INTELLIGENCE · 5 OF 5</div>
+        <div class="title">AI-Augmented Pipeline Narrative &amp; Outreach Sequencing</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M5</div>
+      </div>
+      <div class="tagline-zone"><p>Silence isn't no. Read the signal. Move the deal forward.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of deciding whether a prospect who's engaged but never replied represents genuine intent or noise — and whether to escalate or deprioritise.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Outreach sequencing</span> <span class="bullet-text">— AI produces a sequenced outreach plan from the deal list and engagement notes you bring to class. Human checkpoint: is the narrative telling the story leadership wants to hear — or the story the data actually supports?</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Account Development &amp; Pipeline Intelligence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M5 of 8</div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== FUNCTION 2 ===================== -->
+<div class="function-group">
+  <div class="function-label">FUNCTION 2 — PROPOSAL EXCELLENCE</div>
+  <div class="series-note">Each module targets one professional task in the Proposal Excellence function and produces a named AI-assisted deliverable. Each module is a complete 1-day programme, assessed as part of the Proposal Excellence function.</div>
+
+  <div class="card-grid">
+
+    <!-- M6 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">PROPOSAL EXCELLENCE · 1 OF 3</div>
+        <div class="title">AI-Augmented Proposal &amp; RFP Response Drafting</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M6</div>
+      </div>
+      <div class="tagline-zone"><p>Brief in. Draft out. Customised where it counts.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of deciding how much to customise a proposal when the client's stated requirements closely match the standard package.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">RFP response drafting</span> <span class="bullet-text">— AI produces a first-draft RFP response from the uploaded client brief covering executive summary, scope, and value statement. Human checkpoint: validate which section has been over-generalised before the draft leaves your desk.</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Proposal Excellence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M6 of 8</div></div>
+    </div>
+
+    <!-- M7 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">PROPOSAL EXCELLENCE · 2 OF 3</div>
+        <div class="title">AI-Augmented Executive Summary &amp; Value Proposition Writing</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M7</div>
+      </div>
+      <div class="tagline-zone"><p>New stakeholder. Same deal. Summary that actually lands.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of assessing whether an AI-drafted executive summary reflects the client's actual priorities — or has smoothed out the nuance.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Executive summary rewriting</span> <span class="bullet-text">— AI produces a rewritten executive summary and value proposition for the new stakeholder, from the discovery notes you bring to class. Human checkpoint: does it reflect this client's actual priorities — or generic industry priorities?</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Proposal Excellence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M7 of 8</div></div>
+    </div>
+
+    <!-- M8 -->
+    <div class="card">
+      <div class="card-header">
+        <div class="eyebrow">PROPOSAL EXCELLENCE · 3 OF 3</div>
+        <div class="title">AI-Augmented Meeting Preparation &amp; Discovery Call Brief</div>
+        <div class="meta">🕐 7 Hours</div>
+        <div class="watermark">M8</div>
+      </div>
+      <div class="tagline-zone"><p>Proposal's gone quiet. Know what to ask. Move it forward.</p></div>
+      <div class="card-body">
+        <div class="hook">Targets the task of determining which objections raised in a discovery call to pre-empt in writing versus hold back for the live conversation.</div>
+        <div class="bullets-label">YOU WALK AWAY WITH</div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Discovery call brief</span> <span class="bullet-text">— AI produces a call brief from your meeting notes and email thread, surfacing what's really stalling the deal and what to ask next. Human checkpoint: has it identified the one question that would change your entire approach — or is it producing standard discovery questions any rep would ask?</span></div></div>
+        <div class="bullet-row"><div class="bullet-dot"></div><div><span class="bullet-label">Workflow specification</span> <span class="bullet-text">— walk away with a written record of exactly what you did today in this Proposal Excellence task, organised so you can repeat it next time without rebuilding it from scratch.</span></div></div>
+      </div>
+      <div class="capability-section">
+        <div class="capability-label">AI CAPABILITIES COVERED</div>
+        <div class="cap-grid">
+          <div class="tag">Generative AI Principles &amp; Applications</div>
+          <div class="tag">Prompt Engineering</div>
+          <div class="tag">Generative AI Application Development &amp; Deployment</div>
+          <div class="tag">Agentic</div>
+        </div>
+      </div>
+      <div class="card-footer"><div class="footer-left">ASSESSED AT FUNCTION LEVEL</div><div class="footer-right">M8 of 8</div></div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
