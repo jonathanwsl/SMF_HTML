@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMF CCL — Applied AI for Manufacturing — Module Cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #CC2222;
+  --red-deep: #991A1A;
+  --near-black: #1A1A1A;
+  --grey: #555555;
+  --light-grey: #E8E8E8;
+  --white: #FFFFFF;
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+body { background: var(--light-grey); padding: 48px 32px; font-family: 'Source Sans 3', sans-serif; }
+.wrap { max-width: 1180px; margin: 0 auto; }
+.eyebrow-top { font-family:'Montserrat',sans-serif; font-weight:600; font-size:9px; letter-spacing:0.14em; text-transform:uppercase; color:var(--grey); margin-bottom:6px; }
+.catalogue-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:22px; color:var(--near-black); line-height:1.2; margin-bottom:0; }
+.catalogue-title span { color: var(--red); }
+.red-rule { height:3px; background: var(--red); margin: 10px 0 24px; }
+.function-group { background:#FFFFFF; border-radius:4px; border:1px solid #d0d0d0; padding:20px; margin-bottom:24px; }
+.function-label { font-family:'Montserrat',sans-serif; font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:0.12em; color:var(--red); margin-bottom:8px; }
+.series-note { background: var(--light-grey); border-radius:3px; padding:12px 16px; font-size:13px; color:var(--grey); margin-bottom:20px; line-height:1.5; }
+.card-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:14px; }
+.card-grid.cols-1 { grid-template-columns: 1fr; max-width:480px; margin:0 auto; }
+.card-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+.card { background:#FFFFFF; border-radius:4px; border:none; box-shadow:0 2px 10px rgba(0,0,0,0.10); overflow:hidden; display:flex; flex-direction:column; }
+.card-header { background: var(--red); padding:18px 20px 16px; position:relative; overflow:hidden; }
+.card-header .eyebrow { font-family:'Montserrat',sans-serif; font-weight:600; font-size:9px; text-transform:uppercase; letter-spacing:0.12em; color:rgba(255,255,255,0.8); margin-bottom:7px; }
+.card-title { font-family:'Montserrat',sans-serif; font-weight:700; font-size:16px; color:#FFFFFF; line-height:1.3; margin-bottom:10px; position:relative; z-index:1; }
+.meta { font-size:11px; color:rgba(255,255,255,0.75); position:relative; z-index:1; }
+.clock { font-size:10px; }
+.watermark { position:absolute; bottom:-14px; right:8px; font-family:'Montserrat',sans-serif; font-weight:700; font-size:80px; color:rgba(0,0,0,0.10); line-height:1; }
+.tagline-zone { background: var(--light-grey); border-left:4px solid var(--red); padding:12px 20px; font-family:'Source Sans 3', sans-serif; font-style:italic; font-weight:600; font-size:13px; color:var(--near-black); line-height:1.45; }
+.card-body { background:#FFFFFF; padding:16px 20px 0; flex:1; }
+.hook { font-size:13px; color:var(--grey); line-height:1.65; font-weight:500; margin-bottom:14px; }
+.bullets-label { font-family:'Montserrat',sans-serif; font-weight:700; font-size:8px; text-transform:uppercase; letter-spacing:0.12em; color:var(--red); margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid var(--light-grey); }
+.bullet-row { display:flex; gap:10px; margin-bottom:10px; }
+.bullet-dot { width:6px; height:6px; border-radius:50%; background:var(--red); flex-shrink:0; margin-top:5px; }
+.bullet-label { font-family:'Source Sans 3', sans-serif; font-weight:600; font-size:12px; color:var(--near-black); }
+.bullet-text { font-family:'Source Sans 3', sans-serif; font-weight:400; font-size:12px; color:var(--near-black); line-height:1.55; }
+.capability-section { background: var(--light-grey); border-top:1px solid #d0d0d0; padding:12px 20px; margin-top:14px; }
+.cap-label { font-family:'Montserrat',sans-serif; font-weight:700; font-size:8px; text-transform:uppercase; letter-spacing:0.12em; color:var(--grey); margin-bottom:8px; }
+.cap-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap:5px; }
+.tag { background:#FFFFFF; color:var(--grey); border:1px solid #d0d0d0; font-family:'Montserrat',sans-serif; font-weight:600; font-size:9px; padding:5px 6px; border-radius:3px; text-align:center; }
+.card-footer { background: var(--near-black); padding:10px 20px; display:flex; justify-content:space-between; align-items:center; margin-top:auto; }
+.footer-left { font-family:'Montserrat',sans-serif; font-weight:500; font-size:8px; text-transform:uppercase; letter-spacing:0.06em; color:var(--grey); }
+.footer-right { font-family:'Montserrat',sans-serif; font-weight:700; font-size:9px; letter-spacing:0.1em; color:var(--red); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow-top">SMF Centre for Corporate Learning &middot; Applied AI Series &middot; Singapore SME</div>
+  <div class="catalogue-title">Applied AI for <span>Manufacturing</span> — Module Marketing Cards</div>
+  <div class="red-rule"></div>
+
+  <div class="function-group">
+    <div class="function-label">Production Planning &amp; Resource Scheduling</div>
+    <div class="series-note">Each module targets one professional task in the Production Planning &amp; Resource Scheduling function and produces a named AI-assisted deliverable. Each module is a complete 1-day programme, assessed as part of the Production Planning &amp; Resource Scheduling function.</div>
+    <div class="card-grid">
+      
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Production Planning &amp; Resource Scheduling</div>
+    <div class="card-title">AI-Augmented Demand Signal Processor</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Production Planning &amp; Resource Scheduling &nbsp;&middot;&nbsp; 1 of 5</div>
+    <div class="watermark">M1</div>
+  </div>
+  <div class="tagline-zone">Read demand signals. Rank trend confidence. Plan with certainty.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of translating raw demand data into actionable planning inputs for production scheduling.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Demand Signal Prioritization —</span> <span class="bullet-text">AI produces a prioritized demand signal summary&mdash;trend vectors, volume projections, and demand pattern confidence levels&mdash;from sales orders, forecasts, and customer signals. Human checkpoint: Does the demand projection align with expected market pull and business priorities?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Production Planning &amp; Resource Scheduling task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F1</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Production Planning &amp; Resource Scheduling</div>
+    <div class="card-title">AI-Augmented Capacity Constraint Mapper</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Production Planning &amp; Resource Scheduling &nbsp;&middot;&nbsp; 2 of 5</div>
+    <div class="watermark">M2</div>
+  </div>
+  <div class="tagline-zone">Map equipment load. Rank bottlenecks. Schedule around the real constraint.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of analyzing which capacity constraints will restrict schedule options.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Bottleneck Ranking —</span> <span class="bullet-text">AI produces a bottleneck priority ranking from equipment utilization patterns, job queue analysis, and resource availability data. Human checkpoint: Do the identified bottlenecks accurately predict where production schedules will face constraints?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Production Planning &amp; Resource Scheduling task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F1</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Production Planning &amp; Resource Scheduling</div>
+    <div class="card-title">AI-Augmented Schedule Recommendation Engine</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Production Planning &amp; Resource Scheduling &nbsp;&middot;&nbsp; 3 of 5</div>
+    <div class="watermark">M3</div>
+  </div>
+  <div class="tagline-zone">Sequence by due date. Rank by lead time. Release with confidence.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of sequencing production jobs against real-time capacity constraints using multi-objective optimization.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Job Sequencing —</span> <span class="bullet-text">AI produces a prioritized job schedule&mdash;ordered by due date, production lead time, and equipment availability&mdash;from current demand and manufacturing capacity data. Human checkpoint: Does this sequence respect production planning rules and critical bottleneck constraints?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Production Planning &amp; Resource Scheduling task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F1</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Production Planning &amp; Resource Scheduling</div>
+    <div class="card-title">AI-Augmented Resource Conflict Detector</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Production Planning &amp; Resource Scheduling &nbsp;&middot;&nbsp; 4 of 5</div>
+    <div class="watermark">M4</div>
+  </div>
+  <div class="tagline-zone">Scan job assignments. Flag shortfalls. Approve a feasible plan.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of detecting resource constraints that threaten schedule feasibility.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Resource Conflict Flagging —</span> <span class="bullet-text">AI produces resource bottleneck alerts from capacity inventory and job assignment data, identifying equipment, labor, and material shortfalls that prevent on-time execution. Human checkpoint: Which resource gaps must be resolved before plan approval?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Production Planning &amp; Resource Scheduling task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F1</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Production Planning &amp; Resource Scheduling</div>
+    <div class="card-title">AI-Augmented Plan Viability Validator</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Production Planning &amp; Resource Scheduling &nbsp;&middot;&nbsp; 5 of 5</div>
+    <div class="watermark">M5</div>
+  </div>
+  <div class="tagline-zone">Check the allocation. Flag the over-booking. Validate before execution.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of validating resource allocation against capacity and availability constraints.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Allocation Feasibility Check —</span> <span class="bullet-text">AI produces an allocation-feasibility report&mdash;identifying over-booked resources, insufficient buffer capacity, or competing departmental claims&mdash;from the proposed assignment and live resource inventory. Human checkpoint: Are allocated resources genuinely available during execution windows?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Production Planning &amp; Resource Scheduling task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F1</div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div class="function-group">
+    <div class="function-label">Quality Control &amp; Defect Detection</div>
+    <div class="series-note">Each module targets one professional task in the Quality Control &amp; Defect Detection function and produces a named AI-assisted deliverable. Each module is a complete 1-day programme, assessed as part of the Quality Control &amp; Defect Detection function.</div>
+    <div class="card-grid">
+      
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Quality Control &amp; Defect Detection</div>
+    <div class="card-title">AI-Augmented Inspection Data Collector</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Quality Control &amp; Defect Detection &nbsp;&middot;&nbsp; 1 of 4</div>
+    <div class="watermark">M6</div>
+  </div>
+  <div class="tagline-zone">Normalize inspection logs. Tag defect attributes. Match patterns with confidence.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of standardizing inspection data from multiple operational sources.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Inspection Data Normalization —</span> <span class="bullet-text">AI produces a normalized inspection dataset with consistent metadata alignment and defect-attribute tagging from production inspection logs and quality records. Human checkpoint: Does this dataset include all inspection touchpoints in the production workflow, and are the defect attributes sufficiently granular for downstream pattern matching?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Quality Control &amp; Defect Detection task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F2</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Quality Control &amp; Defect Detection</div>
+    <div class="card-title">AI-Augmented Defect Pattern Recognizer</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Quality Control &amp; Defect Detection &nbsp;&middot;&nbsp; 2 of 4</div>
+    <div class="watermark">M7</div>
+  </div>
+  <div class="tagline-zone">Cluster the defects. Rank the frequency. Target the real pattern.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of recognizing recurring defect patterns from production inspection data.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Defect Pattern Clustering —</span> <span class="bullet-text">AI produces a defect pattern summary with frequency trends and clustered failure categories from inspection logs and metadata. Human checkpoint: Do these recurring patterns correctly reflect actual production variance, and are they stable enough to drive targeted process intervention?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Quality Control &amp; Defect Detection task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F2</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Quality Control &amp; Defect Detection</div>
+    <div class="card-title">AI-Augmented Root Cause Correlator</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Quality Control &amp; Defect Detection &nbsp;&middot;&nbsp; 3 of 4</div>
+    <div class="watermark">M8</div>
+  </div>
+  <div class="tagline-zone">Correlate the parameters. Rank the co-variance. Confirm the root cause.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of isolating operational root causes from recurring defect clusters through statistical pattern analysis.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Causal Correlation Analysis —</span> <span class="bullet-text">AI produces a causal inference summary from inspection logs and concurrent process parameters&mdash;identifying which production conditions co-vary most strongly with observed defect occurrence. Human checkpoint: Is the inferred causality sufficient to warrant process intervention, or does this defect pattern suggest multiple independent root causes requiring separate remediation paths?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Quality Control &amp; Defect Detection task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F2</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <div class="eyebrow">Quality Control &amp; Defect Detection</div>
+    <div class="card-title">AI-Augmented Quality Alert &amp; Escalation</div>
+    <div class="meta"><span class="clock">&#9201;</span> 7 Hours &nbsp;&middot;&nbsp; Quality Control &amp; Defect Detection &nbsp;&middot;&nbsp; 4 of 4</div>
+    <div class="watermark">M9</div>
+  </div>
+  <div class="tagline-zone">Trace the telemetry. Link the cause. Escalate with evidence.</div>
+  <div class="card-body">
+    <div class="hook">Targets the task of linking production parameters and equipment states to observed defect timing.</div>
+    <div class="bullets-label">You Walk Away With</div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Root-Cause Attribution —</span> <span class="bullet-text">AI produces root-cause attribution summaries with supporting evidence chains from equipment telemetry and process logs. Human checkpoint: Is the proposed root cause correctly linked to the defect occurrence patterns, and can the causal pathway be independently verified?</span></div>
+    </div>
+    <div class="bullet-row">
+      <div class="bullet-dot"></div>
+      <div><span class="bullet-label">Workflow Specification —</span> <span class="bullet-text">walk away with a written record of exactly what you did today in this Quality Control &amp; Defect Detection task, organised so you can repeat it next time without rebuilding it from scratch.</span></div>
+    </div>
+  </div>
+  <div class="capability-section">
+    <div class="cap-label">AI Capabilities Covered</div>
+    <div class="cap-grid"><div class="tag">Generative AI Principles &amp; Applications</div><div class="tag">Prompt Engineering</div><div class="tag">Generative AI Application Development &amp; Deployment</div><div class="tag">Agentic</div></div>
+  </div>
+  <div class="card-footer">
+    <div class="footer-left">SMF CCL &middot; Applied AI for Manufacturing</div>
+    <div class="footer-right">F2</div>
+  </div>
+</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

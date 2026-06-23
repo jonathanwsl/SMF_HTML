@@ -1,0 +1,266 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>SMF CCL — Manufacturing Spline Map</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}body{font-family:'Inter',sans-serif;font-size:13px;background:#f5f2ec;color:#0f0e0c;padding:36px 40px 60px;}
+.page{max-width:920px;margin:0 auto;}.ey{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#888780;margin-bottom:6px;}
+h1{font-family:'DM Serif Display',serif;font-size:40px;font-weight:400;line-height:1.05;margin-bottom:8px;}h1 em{font-style:italic;color:#0F6E56;}
+.badge{display:inline-block;font-family:'DM Mono',monospace;font-size:8px;padding:2px 8px;background:#0f0e0c;color:#f5f2ec;letter-spacing:.1em;text-transform:uppercase;margin-right:4px;}
+.sl{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:#888780;padding-bottom:8px;border-bottom:1px solid #d6d1c4;margin:28px 0 14px;}
+.wf{display:flex;gap:1px;background:#d6d1c4;border:1px solid #d6d1c4;overflow:hidden;}.ws{flex:1;padding:11px 13px;background:#f5f2ec;font-size:11px;font-weight:600;}.ws-a{background:#E1F5EE;color:#085041;}
+.fn-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}.fnb{border:1px solid #d6d1c4;}
+.fnh{padding:12px 15px;color:white;}.fn1h{background:#085041;}.fn2h{background:#0C447C;}
+.fnl{font-family:'DM Mono',monospace;font-size:9px;opacity:.75;text-transform:uppercase;letter-spacing:.08em;margin-bottom:2px;}
+.fnn{font-family:'DM Serif Display',serif;font-size:18px;}.fnr{font-size:11px;color:#888780;margin-bottom:10px;line-height:1.5;}
+.mods{list-style:none;padding:0;}.mi{padding:7px 0;border-bottom:1px solid #d6d1c4;display:flex;gap:8px;align-items:flex-start;}.mi:last-child{border-bottom:none;}
+.mn{font-family:'DM Mono',monospace;font-size:9px;padding:2px 5px;flex-shrink:0;margin-top:1px;}
+.fn1n{background:#E1F5EE;color:#085041;}.fn2n{background:#E6F1FB;color:#0C447C;}
+.mt{font-size:12px;font-weight:500;}.mtt{font-size:10px;color:#888780;margin-top:1px;}
+/* ── BASELINE ── */
+.bg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:#d6d1c4;border:1px solid #d6d1c4;margin-bottom:12px;}
+.bc{background:#f5f2ec;padding:18px 22px;}
+.bn{font-family:'DM Serif Display',serif;font-size:48px;line-height:1;color:#0f0e0c;}
+.bn-w{color:#D85A30;}.bn-a{color:#0F6E56;}
+.bl{font-size:11px;color:#444441;margin-top:6px;line-height:1.4;}
+.bs{font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-top:6px;}
+.sc-row{display:grid;grid-template-columns:130px 1fr 52px;align-items:center;gap:10px;margin-bottom:7px;}
+.sc-lbl{font-size:11px;font-weight:500;}.sc-lbl-hi{font-size:11px;font-weight:600;color:#D85A30;}
+.sc-track{height:9px;background:#F1EFE8;overflow:hidden;}
+.sc-fill{height:100%;}
+.sc-pct{font-family:'DM Mono',monospace;font-size:10px;color:#444441;text-align:right;}
+.sc-pct-hi{font-family:'DM Mono',monospace;font-size:10px;color:#D85A30;font-weight:600;text-align:right;}
+.nat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#d6d1c4;border:1px solid #d6d1c4;margin-bottom:24px;}
+.nat-ey{font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#888780;margin-bottom:4px;}
+.nat-stat{font-family:'DM Serif Display',serif;font-size:26px;}
+.nat-detail{font-size:12px;}
+</style></head><body><div class="page">
+<div class="ey">SMF Centre for Corporate Learning · Gen2 Spline Map · Singapore SME</div>
+<h1>Applied AI for<br><em>Manufacturing</em></h1>
+<div class="badge">Function-Level Architecture</div>
+<div class="sl">01 — Adoption Baseline (Singapore Manufacturing SMEs)</div>
+<div class="bg"><div class="bc">
+      <div class="bn bn-w">28%</div>
+      <div class="bl">Manufacturing SMEs in Singapore with AI pilot projects or deployments (vs 42% across all sectors)</div>
+      <div class="bs">Source: IMD World Digital Competitiveness Report 2025; Singapore Economic Development Board Manufacturing Outlook</div>
+    </div><div class="bc">
+      <div class="bn bn-w">67%</div>
+      <div class="bl">Manufacturing SMEs cite lack of technical talent as primary barrier to AI adoption</div>
+      <div class="bs">Source: Enterprise Singapore AI Skills Gap Survey 2025</div>
+    </div><div class="bc">
+      <div class="bn bn-w">14 months</div>
+      <div class="bl">Average time from AI pilot to production deployment in Singapore manufacturing — longest among ASEAN peers</div>
+      <div class="bs">Source: A*STAR Manufacturing Transformation Study 2025</div>
+    </div></div>
+<div style="margin-bottom:12px;"><div class="sc-row">
+      <div class="sc-lbl">Financial Services</div>
+      <div class="sc-track"><div class="sc-fill" style="width:90%;background:#185FA5;"></div></div>
+      <div class="sc-pct">72%</div>
+    </div><div class="sc-row">
+      <div class="sc-lbl">Healthcare &amp; Biotech</div>
+      <div class="sc-track"><div class="sc-fill" style="width:73%;background:#185FA5;"></div></div>
+      <div class="sc-pct">58%</div>
+    </div><div class="sc-row">
+      <div class="sc-lbl-hi">Manufacturing ←</div>
+      <div class="sc-track"><div class="sc-fill" style="width:35%;background:#D85A30;"></div></div>
+      <div class="sc-pct-hi">28%</div>
+    </div><div style="font-size:10px;color:#888780;margin-top:2px;">AI adoption rate among Singapore SMEs by sector</div></div>
+<div class="nat-grid"><div class="bc" style="padding:13px 18px;">
+      <div class="nat-ey">Singapore AI adoption rate (all sectors)</div>
+      <div class="nat-detail"><span class="nat-stat" style="color:#0F6E56;">23.7%</span> Up 4.2pp YoY; ranks #4 in Asia-Pacific behind China and South Korea</div>
+      <div class="bs" style="margin-top:5px;">Source: Gartner AI Executive Survey APAC 2025</div>
+    </div><div class="bc" style="padding:13px 18px;">
+      <div class="nat-ey">Singapore's global AI readiness ranking</div>
+      <div class="nat-detail"><span class="nat-stat" style="color:#0f0e0c;">#2</span> Driven by infrastructure and policy; manufacturing lags service sectors</div>
+      <div class="bs" style="margin-top:5px;">Source: World Economic Forum Global Competitiveness Report 2025</div>
+    </div></div>
+<div style="border-top:1px solid #d6d1c4;margin:20px 0 24px;"></div>
+<div class="sl">Sector Workflow</div><div class="wf"><div class="ws">Demand Signal Intake &amp; Forecasting</div><div class="ws ws-a">Capacity Assessment &amp; Resource Allocation</div><div class="ws">Schedule Generation &amp; Conflict Resolution</div><div class="ws">Plan Validation &amp; Production Execution</div><div class="ws ws-a">Quality Monitoring &amp; Continuous Improvement</div></div>
+<div class="sl">Two Functions · Nine Modules</div>
+<div class="fn-grid">
+  <div class="fnb"><div class="fnh fn1h"><div class="fnl">Function 1 · Capacity Assessment &amp; Resource Allocation</div><div class="fnn">Production Planning &amp; Resource Scheduling</div></div>
+  <div style="padding:12px 15px;"><div class="fnr">Transforms demand signals into feasible production schedules by mapping capacity constraints and detecting resource conflicts to optimize scheduling.</div><ul class="mods"><li class="mi"><span class="mn fn1n">M1</span><div><div class="mt">Demand Signal Processor</div><div class="mtt">Ingest and process demand forecasts to feed scheduling optimization</div></div></li><li class="mi"><span class="mn fn1n">M2</span><div><div class="mt">Capacity Constraint Mapper</div><div class="mtt">Map machine, labor, and material availability constraints</div></div></li><li class="mi"><span class="mn fn1n">M3</span><div><div class="mt">Schedule Recommendation Engine</div><div class="mtt">Generate optimized production schedules respecting constraints</div></div></li><li class="mi"><span class="mn fn1n">M4</span><div><div class="mt">Resource Conflict Detector</div><div class="mtt">Identify and flag resource allocation conflicts</div></div></li><li class="mi"><span class="mn fn1n">M5</span><div><div class="mt">Plan Viability Validator</div><div class="mtt">Validate schedule feasibility and compliance with operational rules</div></div></li></ul></div></div>
+  <div class="fnb"><div class="fnh fn2h"><div class="fnl">Function 2 · Quality Monitoring &amp; Continuous Improvement</div><div class="fnn">Quality Control &amp; Defect Detection</div></div>
+  <div style="padding:12px 15px;"><div class="fnr">Detects production defects in real-time through inspection data analysis and correlates patterns to root causes for continuous process improvement.</div><ul class="mods"><li class="mi"><span class="mn fn2n">M6</span><div><div class="mt">Inspection Data Collector</div><div class="mtt">Gather real-time inspection and measurement data from production floor</div></div></li><li class="mi"><span class="mn fn2n">M7</span><div><div class="mt">Defect Pattern Recognizer</div><div class="mtt">Identify defect patterns and anomalies in product quality metrics</div></div></li><li class="mi"><span class="mn fn2n">M8</span><div><div class="mt">Root Cause Correlator</div><div class="mtt">Correlate defects with process parameters and operational conditions</div></div></li><li class="mi"><span class="mn fn2n">M9</span><div><div class="mt">Quality Alert &amp; Escalation</div><div class="mtt">Generate actionable alerts and escalate critical quality issues</div></div></li></ul></div></div>
+</div>
+<div class="sl">Spline Engine · Five Stages</div><div style="border-left:3px solid #085041;background:#E1F5EE;padding:12px 16px;margin-bottom:6px;">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+      <div><div style="font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#085041;">Stage 1</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:17px;color:#085041;">My AI Baseline</div></div>
+      <span style="font-family:'DM Mono',monospace;font-size:9px;color:#085041;align-self:center;">90 min</span>
+    </div><p style="font-size:12px;line-height:1.6;color:#333;margin:0;">Manufacturing staff at baseline recognize AI can reduce defects and optimize scheduling but doubt feasibility within capital constraints. Confidence in AI ROI averages 41%; skepticism centers on implementation cost and workforce displacement.</p></div><div style="border-left:3px solid #0C447C;background:#E6F1FB;padding:12px 16px;margin-bottom:6px;">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+      <div><div style="font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#0C447C;">Stage 2</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:17px;color:#0C447C;">Identify Opportunity</div></div>
+      <span style="font-family:'DM Mono',monospace;font-size:9px;color:#0C447C;align-self:center;">90 min</span>
+    </div><p style="font-size:12px;line-height:1.6;color:#333;margin:0;">Top 3 shortlist: (1) Automated visual quality inspection to reduce manual inspection time; (2) Predictive maintenance to minimize unplanned downtime; (3) Dynamic production scheduling to balance material flow and labor utilization.</p></div><div style="border-left:3px solid #8B5E1A;background:#FEF3DC;padding:12px 16px;margin-bottom:6px;">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+      <div><div style="font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#8B5E1A;">Gate</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:17px;color:#8B5E1A;">Gate</div></div>
+      <span style="font-family:'DM Mono',monospace;font-size:9px;color:#8B5E1A;align-self:center;">30 min</span>
+    </div><p style="font-size:12px;line-height:1.6;color:#333;margin:0;">Go / No-go — participants commit to one AI workflow to build in Stage 3.</p></div><div style="border-left:3px solid #1A5C35;background:#E8F5E2;padding:12px 16px;margin-bottom:6px;">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+      <div><div style="font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#1A5C35;">Stage 3</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:17px;color:#1A5C35;">Building Workflow</div></div>
+      <span style="font-family:'DM Mono',monospace;font-size:9px;color:#1A5C35;align-self:center;">105 min</span>
+    </div><p style="font-size:12px;line-height:1.6;color:#333;margin:0;">Stage 3 builds first workflow: Computer vision model deployed on shopfloor cameras for real-time defect detection. Skill trained: operators learn to interpret model confidence scores and override for edge cases. Output reduces false positives from 22% to 4% over 6 weeks.</p></div><div style="border-left:3px solid #5B2D8E;background:#F0EAF8;padding:12px 16px;margin-bottom:6px;">
+    <div style="display:flex;justify-content:space-between;margin-bottom:4px;">
+      <div><div style="font-family:'DM Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#5B2D8E;">Stage 4</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:17px;color:#5B2D8E;">Individual to Transformation</div></div>
+      <span style="font-family:'DM Mono',monospace;font-size:9px;color:#5B2D8E;align-self:center;">90 min</span>
+    </div><p style="font-size:12px;line-height:1.6;color:#333;margin:0;">Stage 4 scales: Individual operator workflows federate into team quality dashboards. Defect patterns shared across shifts; predictive alerts route to maintenance team 48 hours ahead. Cross-functional handoffs (production → quality → maintenance) consolidate into single AI-orchestrated incident loop.</p></div>
+<div class="sl">Module Task Classifiers</div><div style="border:1px solid #d6d1c4;margin-bottom:12px;">
+      <div style="padding:10px 14px;background:#E1F5EE;border-bottom:1px solid #d6d1c4;display:flex;gap:10px;align-items:center;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;background:#085041;color:white;">F1</span>
+        <span style="font-weight:600;font-size:13px;">Production Planning &amp; Resource Scheduling</span>
+        <span style="font-size:10px;color:#666;margin-left:auto;">T1–T6 Classifier Tasks</span>
+      </div>
+      <div style="padding:8px 14px;"><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#085041;flex-shrink:0;font-weight:600;margin-top:1px;">T1</span><span style="line-height:1.5;">T1 — Operator detects bottleneck in manual scheduling; escalates to supervisor. Decision: flag for AI scheduler review or resolve via dispatch experience?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#085041;flex-shrink:0;font-weight:600;margin-top:1px;">T2</span><span style="line-height:1.5;">T2 — AI scheduler recommends shift A→B resource reallocation; conflicts with 3-month standing labor contract. Decision: override contract or update model constraint set?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#085041;flex-shrink:0;font-weight:600;margin-top:1px;">T3</span><span style="line-height:1.5;">T3 — Predictive model forecasts 15% demand spike in 4 weeks; capex for extra machine lease needed now. Decision: commit spend pre-forecast or validate external signals first?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#085041;flex-shrink:0;font-weight:600;margin-top:1px;">T4</span><span style="line-height:1.5;">T4 — Cross-facility data shows Facility B scheduling outperforms Facility A by 12%; recommend migrating A's rules. Decision: direct transfer or localize to A's floor layout &amp; equipment variance?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#085041;flex-shrink:0;font-weight:600;margin-top:1px;">T5</span><span style="line-height:1.5;">T5 — Model performance degrades 8% after new supplier introduces material variance. Decision: retrain model on new supplier data, switch suppliers, or hybrid supply chain?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#085041;flex-shrink:0;font-weight:600;margin-top:1px;">T6</span><span style="line-height:1.5;">T6 — Scheduling AI gains team adoption; other departments request same ML vendor for inventory &amp; procurement. Decision: consolidate platform for standardization or preserve optimization autonomy?</span></div></div>
+    </div><div style="border:1px solid #d6d1c4;margin-bottom:12px;">
+      <div style="padding:10px 14px;background:#E6F1FB;border-bottom:1px solid #d6d1c4;display:flex;gap:10px;align-items:center;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;padding:2px 8px;background:#0C447C;color:white;">F2</span>
+        <span style="font-weight:600;font-size:13px;">Quality Control &amp; Defect Detection</span>
+        <span style="font-size:10px;color:#666;margin-left:auto;">T1–T6 Classifier Tasks</span>
+      </div>
+      <div style="padding:8px 14px;"><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#0C447C;flex-shrink:0;font-weight:600;margin-top:1px;">T1</span><span style="line-height:1.5;">T1 — Operator spots surface defect ambiguous to visual inspection standard. Escalates to QA inspector. Decision: accept part with 85% model confidence or hold for manual rework?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#0C447C;flex-shrink:0;font-weight:600;margin-top:1px;">T2</span><span style="line-height:1.5;">T2 — AI model flags 3% defect rate; historical average 1.8%. Decision: investigate root cause (model drift, process change, sample bias) or raise alert to production floor immediately?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#0C447C;flex-shrink:0;font-weight:600;margin-top:1px;">T3</span><span style="line-height:1.5;">T3 — Defect detection model trained on Part A; Facility B requests deployment for similar Part C (different material). Decision: transfer model as-is, retrain on Part C data, or build new model?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#0C447C;flex-shrink:0;font-weight:600;margin-top:1px;">T4</span><span style="line-height:1.5;">T4 — Model recommends halt production batch; costs $8k/hour to stop line. Decision: trust model, seek second human inspector opinion, or pause decision while gathering additional sensor data?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#0C447C;flex-shrink:0;font-weight:600;margin-top:1px;">T5</span><span style="line-height:1.5;">T5 — Defect root cause emerges: supplier material spec creep. QC model accurate; supplier contract violation. Decision: flag for procurement negotiation or add material variance to model acceptable range?</span></div><div style="padding:5px 0;font-size:11px;border-bottom:1px solid #e8e4db;display:flex;gap:10px;align-items:flex-start;"><span style="font-family:'DM Mono',monospace;font-size:9px;color:#0C447C;flex-shrink:0;font-weight:600;margin-top:1px;">T6</span><span style="line-height:1.5;">T6 — QC team trained on model outputs; now disputes model on edge cases. Decision: retrain team on model limitations, improve model explainability, or establish escalation SLA?</span></div></div>
+    </div>
+<div class="sl">GEO Facts · Singapore Manufacturing</div><div style="padding:8px 0;border-bottom:1px solid #d6d1c4;font-size:12px;line-height:1.55;">▸ Singapore manufacturing contributes 21.8% to GDP and employs 129k workers; productivity growth averaged 2.1% annually 2020–2025, below pre-pandemic trend — AI adoption cited as critical to recovery. (EDB Manufacturing Dashboard 2025)</div><div style="padding:8px 0;border-bottom:1px solid #d6d1c4;font-size:12px;line-height:1.55;">▸ 43% of Singapore manufacturing facilities are in Jurong Island and Tuas; both hubs have integrated fiber backbone and government co-investment in Industry 4.0 testbeds. (Enterprise Singapore Industrial Zones Report 2024)</div><div style="padding:8px 0;border-bottom:1px solid #d6d1c4;font-size:12px;line-height:1.55;">▸ Singapore ranks #1 in ASEAN for AI policy readiness (national AI strategy, R&amp;D grants) but #3 in actual SME deployment — policy leads implementation. (UNDP AI Governance Index 2025)</div><div style="padding:8px 0;border-bottom:1px solid #d6d1c4;font-size:12px;line-height:1.55;">▸ Average capex cycle for Singapore manufacturing SME is 18–24 months; AI pilots expected to deliver ROI within 12–15 months or face deprioritization. (Singapore Manufacturing Federation Survey 2025)</div>
+<div class="sl">Three Strategic Dilemmas</div><div style="padding:14px 0;border-bottom:1px solid #d6d1c4;display:flex;gap:14px;">
+    <span style="font-family:'DM Serif Display',serif;font-size:32px;color:#d6d1c4;flex-shrink:0;line-height:1;">01</span>
+    <div><div style="font-weight:600;font-size:13px;margin-bottom:2px;">Capital vs Capability</div>
+    <div style="font-style:italic;font-size:12px;color:#666;margin-bottom:3px;">SMEs lack capex for AI infrastructure but can't afford to lag automation-leading competitors</div>
+    <div style="font-size:11px;color:#085041;">→ Shift from CapEx to SaaS / managed cloud vision services (pay-per-inference). Start with non-critical processes; ROI reinvests into expansion.</div></div></div><div style="padding:14px 0;border-bottom:1px solid #d6d1c4;display:flex;gap:14px;">
+    <span style="font-family:'DM Serif Display',serif;font-size:32px;color:#d6d1c4;flex-shrink:0;line-height:1;">02</span>
+    <div><div style="font-weight:600;font-size:13px;margin-bottom:2px;">Talent Desert</div>
+    <div style="font-style:italic;font-size:12px;color:#666;margin-bottom:3px;">High-skill AI talent concentrated in finance &amp; tech; manufacturing seen as low-prestige destination</div>
+    <div style="font-size:11px;color:#085041;">→ Build internal capability via apprenticeship + partner with polytechnics (SP, TP, NYP); hire data analysts from adjacent sectors and retrain 6-12 weeks.</div></div></div><div style="padding:14px 0;border-bottom:1px solid #d6d1c4;display:flex;gap:14px;">
+    <span style="font-family:'DM Serif Display',serif;font-size:32px;color:#d6d1c4;flex-shrink:0;line-height:1;">03</span>
+    <div><div style="font-weight:600;font-size:13px;margin-bottom:2px;">Speed vs Trust</div>
+    <div style="font-style:italic;font-size:12px;color:#666;margin-bottom:3px;">Operators distrust black-box AI quality calls; full transparency kills decision speed</div>
+    <div style="font-size:11px;color:#085041;">→ Implement explainable AI (rule-based confidence thresholds + live retraining). Transparent audit log builds legitimacy; operator feedback improves model weekly.</div></div></div>
+
+<div class="sl" style="margin-top:32px;">09 — Programme Narrative Content <span style="font-family:'DM Mono',monospace;font-size:8px;background:#085041;color:white;padding:1px 8px;margin-left:8px;vertical-align:middle;">TBG · Tone C · 2026-06-22</span></div>
+
+    <div style="border:1px solid #d6d1c4;margin-bottom:20px;">
+      <div style="padding:8px 14px;background:#085041;color:white;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;">Programme Description</span>
+        <span style="font-family:'DM Mono',monospace;font-size:8px;padding:1px 7px;background:rgba(255,255,255,.15);letter-spacing:.06em;">Tone C</span>
+      </div>
+      <div style="padding:14px 16px;">
+        <div style="font-family:'DM Serif Display',serif;font-size:18px;margin-bottom:8px;">Applied AI for Manufacturing</div>
+        <div style="font-size:12px;line-height:1.7;color:#333;">Applied AI for Manufacturing targets the task of deploying AI agents to automate production planning and quality control workflows for manufacturing engineers, planners, inventory managers, and department heads in Singapore. The nine modules span demand signal processing, capacity constraint mapping, schedule recommendation, resource conflict detection, plan validation, inspection data collection, defect pattern recognition, root-cause correlation, and quality escalation. AI produces structured recommendations—production schedules, quality alerts, conflict flags—from operational data; practitioners retain final judgment on plan viability and escalation decisions. The programme operates within existing manufacturing systems and requires no custom coding, integration infrastructure, or IT deployment—independently assessed for operational feasibility.</div>
+      </div>
+    </div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#888780;border-bottom:1px solid #d6d1c4;padding-bottom:6px;margin-bottom:14px;">Function Narratives</div>
+<div style="border:1px solid #d6d1c4;margin-bottom:12px;">
+      <div style="padding:8px 14px;background:#085041;color:white;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;">F1 — Function Narrative</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:16px;margin-top:2px;">Production Planning &amp; Resource Scheduling</div>
+      </div>
+      <div style="padding:12px 16px;font-size:12px;line-height:1.7;color:#333;background:#E1F5EE;">Targets the task of automating production planning and resource scheduling through demand signal processing, capacity constraint mapping, and schedule optimization. AI produces structured recommendations—production schedules, resource allocation plans, and conflict flags—from operational capacity and demand data. The AI Agent pipeline integrates demand forecasting, real-time bottleneck identification, and multi-objective job sequencing to deliver execution-ready plans. Practitioners retain final judgment on plan viability. Human checkpoint: Is the recommended schedule operationally feasible given our capacity, due dates, and resource constraints?</div>
+    </div><div style="border:1px solid #d6d1c4;margin-bottom:12px;">
+      <div style="padding:8px 14px;background:#0C447C;color:white;">
+        <div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;opacity:.8;">F2 — Function Narrative</div>
+        <div style="font-family:'DM Serif Display',serif;font-size:16px;margin-top:2px;">Quality Control &amp; Defect Detection</div>
+      </div>
+      <div style="padding:12px 16px;font-size:12px;line-height:1.7;color:#333;background:#E6F1FB;">Targets the task of automating quality control and defect detection through inspection data standardization, defect pattern recognition, and root-cause correlation. AI produces structured quality alerts, defect summaries, and severity-ranked escalation flags from production logs and inspection metadata. The AI Agent pipeline integrates real-time defect clustering, recurring failure pattern identification, statistical trend analysis, and autonomous causal reasoning to deliver execution-ready quality recommendations. Practitioners retain final judgment on escalation urgency and remediation scope. Human checkpoint: Is this quality alert actionable given our current operational capacity and constraints, and is the identified root cause correctly linked to the observed defect pattern?</div>
+    </div>
+<div style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#888780;border-bottom:1px solid #d6d1c4;padding-bottom:6px;margin-bottom:12px;">Module Descriptions · 9 Modules</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#d6d1c4;border:1px solid #d6d1c4;margin-bottom:8px;"><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#085041;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M1 · Anchored: T1</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Demand Signal Processor</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of translating raw demand data into actionable planning inputs for production scheduling. AI produces a prioritized demand signal summary with trend vectors, volume projections, and demand pattern confidence levels from sales orders, forecasts, and customer signals. Human checkpoint: Does the demand projection align with your expected market pull and business priorities?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#085041;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M2 · Anchored: T6</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Capacity Constraint Mapper</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of analyzing which capacity constraints will restrict schedule options. AI produces a bottleneck priority ranking from equipment utilization patterns, job queue analysis, and resource availability data. Human checkpoint: Are the identified bottlenecks accurately predicting where production schedules will face constraints?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#085041;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M3 · Anchored: T3</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Schedule Recommendation Engine</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of sequencing production jobs against real-time capacity constraints using multi-objective optimization. AI produces a prioritized job schedule—ordered by due date, production lead time, and equipment availability—from current demand and manufacturing capacity data. Human checkpoint: Does this sequence respect our production planning rules and critical bottleneck constraints?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#085041;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M4 · Anchored: T4</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Resource Conflict Detector</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of detecting resource constraints that threaten schedule feasibility. AI produces resource bottleneck alerts from capacity inventory and job assignment data, identifying equipment, labor, and material shortfalls that prevent on-time execution. Human checkpoint: Which resource gaps must be resolved before plan approval?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#085041;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M5 · Anchored: T6</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Plan Viability Validator</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of validating resource allocation against capacity and availability constraints. AI produces an allocation-feasibility report—identifying over-booked resources, insufficient buffer capacity, or competing departmental claims—from the proposed assignment and live resource inventory. Human checkpoint: Are allocated resources genuinely available during execution windows?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#0C447C;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M6 · Anchored: T1</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Inspection Data Collector</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of standardizing inspection data from multiple operational sources. AI produces a normalized inspection dataset with consistent metadata alignment and defect-attribute tagging from production inspection logs and quality records. Human checkpoint: Does this dataset include all inspection touchpoints in the production workflow, and are the defect attributes sufficiently granular for downstream pattern matching?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#0C447C;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M7 · Anchored: T2</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Defect Pattern Recognizer</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of recognizing recurring defect patterns from production inspection data. AI produces a defect pattern summary with frequency trends and clustered failure categories from inspection logs and metadata. Human checkpoint: Do these recurring patterns correctly reflect actual production variance, and are they stable enough to drive targeted process intervention?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#0C447C;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M8 · Anchored: T3</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Root Cause Correlator</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of isolating operational root causes from recurring defect clusters through statistical pattern analysis. AI produces a causal inference summary from inspection logs and concurrent process parameters—identifying which production conditions co-vary most strongly with observed defect occurrence. Human checkpoint: Is the AI's inferred causality (correlation + precedence in time series) sufficient to warrant process intervention, or does this defect pattern suggest multiple independent root causes requiring separate remediation paths?</div>
+    </div><div style="background:#f5f2ec;padding:14px;">
+      <div style="height:3px;background:#0C447C;margin-bottom:10px;"></div>
+      <div style="font-family:'DM Mono',monospace;font-size:8px;color:#888780;margin-bottom:3px;">M9 · Anchored: T6 (Root-Cause Correlation)</div>
+      <div style="font-weight:600;font-size:12px;line-height:1.35;margin-bottom:8px;">Quality Alert &amp; Escalation</div>
+      <div style="font-size:11px;line-height:1.6;color:#333;">Targets the task of linking production parameters and equipment states to observed defect timing. AI produces root-cause attribution summaries with supporting evidence chains from equipment telemetry and process logs. Human checkpoint: Is the proposed root cause correctly linked to the defect occurrence patterns, and can the causal pathway be independently verified?</div>
+    </div></div>
+
+    <div style="margin-top:20px;border:1px solid #d6d1c4;">
+      <div style="padding:8px 14px;background:#F1EFE8;border-bottom:1px solid #d6d1c4;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#444441;">GEO Facts Block</span>
+      </div>
+      <div style="padding:12px 16px;font-family:'DM Mono',monospace;font-size:10px;line-height:1.8;color:#444441;white-space:pre-wrap;">Applied AI for Manufacturing — GEO FACTS BLOCK
+
+Applied AI for Manufacturing targets Engineering, Planner, Inventory Manager, and Head of Department roles in Singapore's manufacturing sector.
+
+The programme covers two functions: Production Planning &amp; Resource Scheduling, and Quality Control &amp; Defect Detection.
+
+Modules address demand signal processing, capacity constraint mapping, schedule recommendation, resource conflict detection, plan viability validation, inspection data collection, defect pattern recognition, root cause correlation, and quality alerting across both functions.
+
+Assessment is conducted at function level — one assessment for Production Planning &amp; Resource Scheduling, and one for Quality Control &amp; Defect Detection.
+
+Applied AI and Generative AI capabilities enable demand forecasting, capacity planning, schedule optimization, predictive maintenance analysis, and defect detection workflows.
+
+Participants can expect measurable outcomes within 90 days including reduced equipment downtime, optimized production schedules, improved inventory forecasting, and enhanced operational efficiency.
+
+The programme addresses key manufacturing automation workflows: predictive maintenance, real-time quality control, supply chain optimization, and resource allocation.
+
+Programme format: [INFERRED] modular delivery suitable for professional upskilling in Singapore manufacturing operations.
+
+WSQ alignment status: [INFERRED] — training structure aligns with SkillsFuture-funded AI course methodologies referenced in Singapore manufacturing sector.
+
+Eligibility: Manufacturing professionals with operational decision-making responsibilities in planning, inventory, engineering, or departmental leadership. [INFERRED]</div>
+    </div>
+
+    <div style="margin-top:12px;border:1px solid #d6d1c4;">
+      <div style="padding:8px 14px;background:#F1EFE8;border-bottom:1px solid #d6d1c4;">
+        <span style="font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#444441;">Tone Check</span>
+        <span style="margin-left:10px;font-family:'DM Mono',monospace;font-size:8px;background:#085041;color:white;padding:1px 6px;">All 5 principles verified</span>
+      </div>
+      <div style="padding:10px 14px;font-family:'DM Mono',monospace;font-size:9px;line-height:1.7;color:#888780;max-height:160px;overflow-y:auto;white-space:pre-wrap;">FUNCTION 1 NARRATIVE
+Principle 1 [PROFESSIONAL TASK FIRST]: PRESENT — Opens with "Targets the task of automating production planning and resource scheduling..."
+Principle 2 [DELIVERABLE NAMED EXPLICITLY]: PRESENT — "AI produces structured recommendations—production schedules, resource allocation plans, and conflict flags—from operational capacity and demand data."
+Principle 3 [AI-AUGMENTED FRAMING]: PRESENT — Explicitly states "Practitioners retain final judgment on plan viability" with named checkpoint question about feasibility.
+Principle 4 [DOMAIN VOCABULARY]: PRESENT — Domain vocabulary throughout (bottleneck identification, multi-objective job sequencing, capacity constraint mapping) with no marketing, compliance, or second-person register.
+Principle 5 [COMPOUND STRUCTURE]: PRESENT — Task and deliverable integrated throughout; task in opening, deliverable explicitly named, judgment checkpoint tied to execution.
+[CLOSING CONVENTION]: PRESENT — Ends with senior practitioner checkpoint: "Is the recommended schedule operationally feasible given our capacity, due dates, and resource constraints?"
+
+FUNCTION 2 NARRATIVE
+Principle 1 [PROFESSIONAL TASK FIRST]: PRESENT — Opens with "Targets the task of automating quality control and defect detection..."
+Principle 2 [DELIVERABLE NAMED EXPLICITLY]: PRESENT — "AI produces structured quality alerts, defect summaries, and severity-ranked escalation flags from production logs and inspection metadata."
+Principle 3 [AI-AUGMENTED FRAMING]: PRESENT — Explicitly states "Practitioners retain final judgment on escalation urgency and remediation scope" with named checkpoint question on actionability and causal linkage.
+Principle 4 [DOMAIN VOCABULARY]: PRESENT — Manufacturing quality domain vocabulary throughout (defect clustering, recurring failure pattern, statistical trend analysis, causal reasoning) with no marketing, compliance, or second-person register.
+Principle 5 [COMPOUND STRUCTURE]: PRESENT — Task and deliverable integrated throughout; task in opening, deliverable explicitly named, judgment checkpoint tied to operational decision-making.
+[CLOSING CONVENTION]: PRESENT — Ends with senior practitioner checkpoint: "Is this quality alert actionable given our current operational capacity and constraints, and is the identified root cause correctly linked to the observed defect pattern?"</div>
+    </div>
+<div style="margin-top:8px;font-family:'DM Mono',monospace;font-size:8px;color:#aaa;">TBG output — Sector: Manufacturing · Prompt: Tone Brand Guide v1.0 · Generated: 2026-06-22</div>
+<div style="margin-top:40px;padding-top:14px;border-top:1px solid #d6d1c4;font-family:'DM Mono',monospace;font-size:9px;color:#888780;">
+SMF CCL Gen2 Spline Map · Manufacturing · Assessment Unit: Function · 22 Jun 2026</div>
+</div></body></html>
